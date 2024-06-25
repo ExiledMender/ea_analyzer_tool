@@ -1,20 +1,43 @@
 import json
+import re
+import os
 
 def slice_json(info_txt_path):
     try:
-        with open(info_txt_path, 'r') as info_file:
-            data = info_file.read()
+        with open(info_txt_path, "r") as info_file:
+            content = info_file.read()
+        
+        # Split lines
+        lines = content.splitlines()
 
-            start_position = data.find("Agent Info=")
-            offset = len("Agent Info=")
-            start_position = start_position + offset +1
-            json_slice = data[start_position:]
-            json_string = json.loads(json_slice)
-            
-            return json_string
+        data = {}
+        json_content = ""
+        in_json_section = False
+
+        for line in lines:
+            # Check for the "Agent Info" section
+            if "Agent Info=" in line:
+                in_json_section = True
+                json_content += line.split("=", 1)[1].strip()
+            elif in_json_section:
+                json_content += line.strip()
+            elif "=" in line:
+                key, value = line.split("=", 1)
+                data[key.strip()] = value.strip()
+        
+        # Parse the JSON section
+        if json_content:
+            agent_info = json.loads(json_content)
+            data["AgentInfo"] = agent_info
+
+        return data
+    
     except IOError as e:
         print(f"Error reading file {info_txt_path}: {e}")
         return None
+    except json.JSONDecodeError as e:
+        print(f"Error parsing JSON content: {e}")
+        return None
     except Exception as e:
-        print(f"Error parsing file {info_txt_path}: {e}")
+        print(f"Error processing file {info_txt_path}: {e}")
         return None
