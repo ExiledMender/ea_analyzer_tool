@@ -1,10 +1,11 @@
 import json
 import os
 
-info_json_path = 'logs/Analyzer/Info.json'
-machine_info_path = 'logs/PluginsData/AssetManager/machine_info.json'
-test_connection_json_path = 'logs/Analyzer/TestConnections.json'
-html_path = 'AnalyzerResults.html'
+# Define paths using os.path.join for cross-platform compatibility
+info_json_path = os.path.join('logs', 'Analyzer', 'Info.json')
+machine_info_path = os.path.join('logs', 'PluginsData', 'AssetManager', 'machine_info.json')
+test_connection_json_path = os.path.join('logs', 'Analyzer', 'TestConnections.json')
+html_filename = 'AnalyzerResults.html'  # This will be the filename in the current directory
 
 def bytes_to_gb(bytes_value):
     gb_value = bytes_value / (1024 ** 3)

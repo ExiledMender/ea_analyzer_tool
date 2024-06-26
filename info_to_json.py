@@ -1,9 +1,13 @@
 import json
-import re
 import os
 
 def slice_json(info_txt_path):
     try:
+        # Check if the file exists
+        if not os.path.isfile(info_txt_path):
+            print(f"Error: File {info_txt_path} does not exist.")
+            return None
+        
         with open(info_txt_path, "r") as info_file:
             content = info_file.read()
         
@@ -36,7 +40,7 @@ def slice_json(info_txt_path):
         print(f"Error reading file {info_txt_path}: {e}")
         return None
     except json.JSONDecodeError as e:
-        print(f"Error parsing JSON content: {e}")
+        print(f"Error parsing JSON content in {info_txt_path}: {e}")
         return None
     except Exception as e:
         print(f"Error processing file {info_txt_path}: {e}")
