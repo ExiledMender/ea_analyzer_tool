@@ -1,24 +1,24 @@
 import json
 import os
 
-# Define paths using os.path.join for cross-platform compatibility
-info_json_path = os.path.join('logs', 'Analyzer', 'Info.json')
-machine_info_path = os.path.join('logs', 'PluginsData', 'AssetManager', 'machine_info.json')
-test_connection_json_path = os.path.join('logs', 'Analyzer', 'TestConnections.json')
-html_filename = 'AnalyzerResults.html'  # This will be the filename in the current directory
-
 def bytes_to_gb(bytes_value):
     gb_value = bytes_value / (1024 ** 3)
     return gb_value
 
 def generate_html_from_json(info_json_path, html_path):
     html_dir = os.path.dirname(html_path)
-    
     if html_dir:
         os.makedirs(html_dir, exist_ok=True)
     
-    with open(info_json_path, 'r') as file:
-        data = json.load(file)
+    try:
+        with open(info_json_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        print(f"Error: File '{info_json_path}' not found.")
+        return
+    except Exception as e:
+        print(f"Error reading '{info_json_path}': {e}")
+        return
     
     agent_info = data.get('AgentInfo', {})
     account_token = data.get('AccountToken', 'N/A')
@@ -28,13 +28,17 @@ def generate_html_from_json(info_json_path, html_path):
     last_user = agent_info.get('last_user', 'N/A')
     engine_version = agent_info.get('engine_version', 'N/A')
 
-    os_version = data.get('AgentInfo', {}).get('os_info', {}).get('os_version', 'N/A')
-    os_release_name = data.get('AgentInfo', {}).get('os_info', {}).get('os_release_name', 'N/A')
-    os_type = data.get('AgentInfo', {}).get('os_info', {}).get('os_type', 'N/A')
-    os_architecture = data.get('AgentInfo', {}).get('os_info', {}).get('os_architecture', 'N/A')
+    os_version = agent_info.get('os_info', {}).get('os_version', 'N/A')
+    os_release_name = agent_info.get('os_info', {}).get('os_release_name', 'N/A')
+    os_type = agent_info.get('os_info', {}).get('os_type', 'N/A')
+    os_architecture = agent_info.get('os_info', {}).get('os_architecture', 'N/A')
 
-    with open(machine_info_path, 'r') as machine_file:
-        machine_info = json.load(machine_file)
+    try:
+        with open(os.path.join('logs', 'PluginsData', 'AssetManager', 'machine_info.json'), 'r', encoding='utf-8') as machine_file:
+            machine_info = json.load(machine_file)
+    except FileNotFoundError:
+        print("Error: File 'machine_info.json' not found.")
+        machine_info = {}
 
     drives_info = machine_info.get('drives', [])
 
@@ -52,9 +56,11 @@ def generate_html_from_json(info_json_path, html_path):
         freespace_total_gb = bytes_to_gb(freespace_total_bytes)
 
         storage_used_gb = total_size_gb - freespace_available_gb
-        storage_used_percentage = (storage_used_gb / total_size_gb) * 100
+        if total_size_gb > 0:
+            storage_used_percentage = (storage_used_gb / total_size_gb) * 100
+        else:
+            storage_used_percentage = 0
 
-        # Format the percentage for display
         storage_percentage_display = f"{storage_used_percentage:.2f}%"
 
         storage_info_html += f"""
@@ -72,7 +78,7 @@ def generate_html_from_json(info_json_path, html_path):
         </div>
         <div class="info-item">
             <label>Storage:</label>
-            <span>{storage_used_gb:.2f} GB of {total_size_gb:.2f} GB used ({storage_used_percentage:.0f}%)</span>
+            <span>{storage_used_gb:.2f} GB of {total_size_gb:.2f} GB used ({storage_percentage_display})</span>
             <div class="storage-bar-container">
                 <div class="storage-bar" style="width: {storage_used_percentage}%;"></div>
             </div>
@@ -88,7 +94,6 @@ def generate_html_from_json(info_json_path, html_path):
     mwac = protection_status.get('mwac', 'N/A')
     sp = protection_status.get('sp', 'N/A')
 
-    # Extract specific plugin versions
     endpoint_protection = next((p.get('plugin_version', 'N/A') for p in plugins if p.get('product_name') == 'Endpoint Protection'), 'N/A')
     protection_update = next((p.get('update_package_version', 'N/A') for p in plugins if p.get('product_name') == 'Endpoint Protection'), 'N/A')
     protection_service = next((p.get('sdk_version', 'N/A') for p in plugins if p.get('product_name') == 'Endpoint Protection'), 'N/A')
@@ -112,24 +117,22 @@ def generate_html_from_json(info_json_path, html_path):
     arw_indicator_symbol = get_indicator_symbol(arw)
     mwac_indicator_symbol = get_indicator_symbol(mwac)
     sp_indicator_symbol = get_indicator_symbol(sp)
-    
+
     def connection_indicator_symbol(status):
         return '✔' if status == 'Passed' else '✖'
 
-    # Read and load the JSON data
-    with open(test_connection_json_path, 'r') as connection_file:
-        connection_data = json.load(connection_file)
+    try:
+        with open(os.path.join('logs', 'Analyzer', 'TestConnections.json'), 'r', encoding='utf-8') as connection_file:
+            connection_data = json.load(connection_file)
+    except FileNotFoundError:
+        print("Error: File 'TestConnections.json' not found.")
+        connection_data = {}
 
-    # Prepare the HTML output for all URLs
     connection_results_html = ''
-
     for url, details in connection_data.items():
-        # Determine the status and symbol for each URL
         status = "Passed" if details.get('Result', False) else "Failed"
         symbol = connection_indicator_symbol(status)
-        # Append to the HTML output
         connection_results_html += f'<div class="info-item-connection"><label>{url}</label><span class="indicator">{symbol}</span><span>{status}</span></div>\n'
-
 
     html_content = f"""
     <!DOCTYPE html>
@@ -350,15 +353,15 @@ def generate_html_from_json(info_json_path, html_path):
     </html>
     """
     
-    # Generate the filename with host_name
     filename = f"{host_name}_Analyzer_Results.html"
     html_path_with_name = os.path.join(html_dir, filename)
-    
-    # Write the HTML content to the file
-    with open(html_path_with_name, 'w') as file:
-        file.write(html_content)
-    
-    print(f"HTML file generated at {html_path_with_name}")
+
+    try:
+        with open(html_path_with_name, 'w', encoding='utf-8') as file:
+            file.write(html_content)
+        print(f"HTML file '{filename}' generated successfully.")
+    except Exception as e:
+        print(f"Error writing '{html_path_with_name}': {e}")
 
 if __name__ == "__main__":
-    generate_html_from_json('logs/Analyzer/Info.json', 'AnalyzerResults.html')
+    generate_html_from_json(os.path.join('logs', 'Analyzer', 'Info.json'), os.path.join('logs', 'Analyzer', '{host_name}_Analyzer_Results.html'))

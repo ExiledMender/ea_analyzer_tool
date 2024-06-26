@@ -3,7 +3,6 @@ import os
 
 def slice_json(info_txt_path):
     try:
-        # Check if the file exists
         if not os.path.isfile(info_txt_path):
             print(f"Error: File {info_txt_path} does not exist.")
             return None
@@ -11,7 +10,6 @@ def slice_json(info_txt_path):
         with open(info_txt_path, "r") as info_file:
             content = info_file.read()
         
-        # Split lines
         lines = content.splitlines()
 
         data = {}
@@ -19,7 +17,6 @@ def slice_json(info_txt_path):
         in_json_section = False
 
         for line in lines:
-            # Check for the "Agent Info" section
             if "Agent Info=" in line:
                 in_json_section = True
                 json_content += line.split("=", 1)[1].strip()
@@ -29,7 +26,6 @@ def slice_json(info_txt_path):
                 key, value = line.split("=", 1)
                 data[key.strip()] = value.strip()
         
-        # Parse the JSON section
         if json_content:
             agent_info = json.loads(json_content)
             data["AgentInfo"] = agent_info
