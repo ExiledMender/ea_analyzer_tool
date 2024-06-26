@@ -1,0 +1,13 @@
+2024-05-26 08:07:09,264-07:00 (12620) [1 ] INFO  EATray Command line args have been evaluated and logger has been initialized No command line arguments supplied
+
+2024-05-26 08:07:09,295-07:00 (12620) [1 ] INFO  EATray **************  EATray Initializing! Version:1.2.0.488 PID:12620 ***************
+2024-05-26 08:07:09,295-07:00 (12620) [1 ] INFO  EATray Checking to see if another instance of [EATray] process is already running in this session id:2.
+2024-05-26 08:07:09,295-07:00 (12620) [1 ] INFO  EATray This is the ONLY instance of  [EATray] process running in this session id:2.
+2024-05-26 08:07:09,561-07:00 (12620) [5 ] INFO  TrayPipeConnector Connector Started.
+2024-05-26 08:07:09,576-07:00 (12620) [6 ] INFO  ShutdownMonitor Monitor -- Activate EventHandle Global\EventMalwarebytesMBCoudEAEAUserAgentArmKillSwitch2S-1-12-1-1458658632-1336406663-4226600842-6376771 exists.
+2024-05-26 08:07:09,576-07:00 (12620) [6 ] INFO  ShutdownMonitor Monitor -- Activate  Global\EventMalwarebytesMBCoudEAEAUserAgentTriggerKillSwitch2S-1-12-1-1458658632-1336406663-4226600842-6376771 Shutdown Monitoring
+2024-05-26 08:07:09,576-07:00 (12620) [6 ] INFO  ShutdownMonitor Monitor -- Trigger EventHandle Global\EventMalwarebytesMBCoudEAEAUserAgentTriggerKillSwitch2S-1-12-1-1458658632-1336406663-4226600842-6376771 exists.
+2024-06-11 10:21:17,384-07:00 (12620) [1 ] INFO  ShutdownMonitor Monitor -- Cancelling ShutdownMonitor
+2024-06-11 10:21:17,384-07:00 (12620) [1 ] INFO  TrayPipeConnector Cancelling Connector
+2024-06-11 10:21:17,400-07:00 (12620) [5 ] INFO  TrayPipeConnector Connector terminating
+2024-06-11 10:21:17,416-07:00 (12620) [12] INFO  EATray Communication Lost. EAEngine Named Pipe server is unavailable. The service may be restarting or is not running.

@@ -1,0 +1,59 @@
+F82FEDCEB7ED27031F84C888F5EE44524EA817339710993142C323883E6D06D9
+{
+   "applicationVersion": "4.6.9.314",
+   "chromeSyncResetQueryRequested": false,
+   "chromeSyncResetQueryResult": false,
+   "clientID": "Endpoint Agent:19a5892a-db0d-4f41-b0cb-4d6682f52894",
+   "clientType": "agentScan",
+   "componentsUpdatePackageVersion": "1.0.2276",
+   "coreDllFileVersion": "3.0.0.1431",
+   "cpu": "x64",
+   "dbSDKUpdatePackageVersion": "1.0.82390",
+   "detectionDateTime": "2024-03-20T17:20:00Z",
+   "fileSystem": "NTFS",
+   "id": "1509868d-e6de-11ee-8346-7c8334bc68a5",
+   "isLargePEEnabled": true,
+   "isUserAdmin": true,
+   "largePEMaxSize": 2147483647,
+   "licenseState": "licensed",
+   "linkagePhaseComplete": true,
+   "loggedOnUserName": "WX14556W173\\NursingStaff-KingsNu",
+   "machineID": "",
+   "os": "Windows 10 (Build 19045.4170)",
+   "schemaVersion": 22,
+   "sourceDetails": {
+      "aggressiveMode": false,
+      "clientMetadata": {
+         "jobId": "",
+         "scheduleId": "cdc8a723-6754-4f6b-bf23-f2cc2e52470f",
+         "scheduleTag": "31535fba4245794a64ded9fd9708f559"
+      },
+      "ddsigEnabled": true,
+      "filesScannedByIG": 0,
+      "objectsScanned": 696576,
+      "scanEndTime": "2024-03-20T17:45:18Z",
+      "scanOnlineStatus": "online",
+      "scanOptions": {
+         "pumHandling": "detect",
+         "pupHandling": "detect",
+         "scanArchives": true,
+         "scanFileSystem": true,
+         "scanMemoryObjects": true,
+         "scanPUMs": true,
+         "scanPUPs": true,
+         "scanRookits": false,
+         "scanStartupAndRegistry": true,
+         "scanType": "custom",
+         "useHeuristics": true
+      },
+      "scanResult": "completed",
+      "scanStartTime": "2024-03-20T17:20:00Z",
+      "scanState": "completed",
+      "shurikenEnabled": true,
+      "type": "scan"
+   },
+   "threats": [
+
+   ],
+   "threatsDetected": 0
+}

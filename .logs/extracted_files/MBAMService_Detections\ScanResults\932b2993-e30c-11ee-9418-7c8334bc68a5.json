@@ -1,0 +1,59 @@
+B4E290E31111BEED5741A079899C7D5A77C00AAC880039E51BF7C68161EB29B1
+{
+   "applicationVersion": "4.6.8.311",
+   "chromeSyncResetQueryRequested": false,
+   "chromeSyncResetQueryResult": false,
+   "clientID": "Endpoint Agent:c3f312d1-27eb-445b-ab5c-9fb185b35204",
+   "clientType": "agentScan",
+   "componentsUpdatePackageVersion": "1.0.2249",
+   "coreDllFileVersion": "3.0.0.1430",
+   "cpu": "x64",
+   "dbSDKUpdatePackageVersion": "1.0.82178",
+   "detectionDateTime": "2024-03-15T20:42:44Z",
+   "fileSystem": "NTFS",
+   "id": "932b2993-e30c-11ee-9418-7c8334bc68a5",
+   "isLargePEEnabled": true,
+   "isUserAdmin": true,
+   "largePEMaxSize": 2147483647,
+   "licenseState": "licensed",
+   "linkagePhaseComplete": true,
+   "loggedOnUserName": "WX14556W173\\",
+   "machineID": "",
+   "os": "Windows 10 (Build 19045.4170)",
+   "schemaVersion": 22,
+   "sourceDetails": {
+      "aggressiveMode": false,
+      "clientMetadata": {
+         "jobId": "6906d98e-7568-448d-8735-c5c2986253fb",
+         "scheduleId": "",
+         "scheduleTag": ""
+      },
+      "ddsigEnabled": true,
+      "filesScannedByIG": 0,
+      "objectsScanned": 450845,
+      "scanEndTime": "2024-03-15T20:47:56Z",
+      "scanOnlineStatus": "online",
+      "scanOptions": {
+         "pumHandling": "detect",
+         "pupHandling": "detect",
+         "scanArchives": true,
+         "scanFileSystem": true,
+         "scanMemoryObjects": true,
+         "scanPUMs": true,
+         "scanPUPs": true,
+         "scanRookits": false,
+         "scanStartupAndRegistry": true,
+         "scanType": "threat",
+         "useHeuristics": true
+      },
+      "scanResult": "completed",
+      "scanStartTime": "2024-03-15T20:42:44Z",
+      "scanState": "completed",
+      "shurikenEnabled": true,
+      "type": "scan"
+   },
+   "threats": [
+
+   ],
+   "threatsDetected": 0
+}

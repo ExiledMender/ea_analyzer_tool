@@ -1,0 +1,447 @@
+
+====== Malwarebytes Installer Service Version 4.0.0.559 started 2024-02-27 22:18:33 (UTC -0800) =====
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1276: Starting MBAMInstallerService version 4.0.0.559
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1344: Service Worker Started
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:6105: Read language code from ISvc registry: en
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:6210: Installing NCEP-WIN to C:\Program Files\Malwarebytes\Anti-Malware and C:\ProgramData\Malwarebytes\MBAMService
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:115: OpenService - Service not installed
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\installedproducts.cpp:58: Found Malwarebytes Endpoint Agent installed as {949D1792-E377-4348-8BC4-6D643EF49B21} (64)
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\installedproducts.cpp:73: DisplayVersion=1.2.0.1096, InstallLocation=C:\Program Files\Malwarebytes Endpoint Agent\
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1696: Not an upgrade
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1713: Clearing temp directory
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1774: Downloading packages.
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5543: Service package name: ncep-win.svc.64bit
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5544: Controller package name: ncep-win.ctlr.64bitv4
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5695: Modifier: /release
+2024-02-27 22:18:33 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:89: Downloading C:\WINDOWS\TEMP\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\servicepkg.7z
+2024-02-27 22:18:34 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:200: Server returned HTTP status code of: 200
+2024-02-27 22:18:34 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:319: Content-Length: 2333919
+2024-02-27 22:18:34 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5695: Modifier: /release
+2024-02-27 22:18:34 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:89: Downloading C:\WINDOWS\TEMP\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\ctlrpkg.7z
+2024-02-27 22:18:35 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:200: Server returned HTTP status code of: 200
+2024-02-27 22:18:35 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:319: Content-Length: 36100509
+2024-02-27 22:18:38 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5695: Modifier: /release
+2024-02-27 22:18:38 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:89: Downloading C:\WINDOWS\TEMP\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\dbclspkg.7z
+2024-02-27 22:18:38 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:200: Server returned HTTP status code of: 200
+2024-02-27 22:18:38 (UTC -0800) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:319: Content-Length: 48574585
+2024-02-27 22:18:43 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1781: Successfully downloaded base packages.
+2024-02-27 22:18:43 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1807: Unzipping packages.
+2024-02-27 22:18:43 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:835: Read service/program version: 4.6.8.311
+2024-02-27 22:18:43 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1824: Installing new UI package: No
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:9519: Using MBAMWsc.exe
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:682: Version of C:\WINDOWS\TEMP\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\servicepkg\MBAMService.exe: 3.2.0.1269
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1873: New MBAMService.exe supports register cmd line option
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7913: MakeUninstaller - src: , dest: C:\Program Files\Malwarebytes\Anti-Malware\mbuns.exe
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7931: [MakeUninstaller] Error! src does not exist
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4549: Checking PFRO entries found
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4649: No NCEP-WIN PFRO entries found
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1934: IsMBESInstalled: No
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2109: Looking for installed MBAMService
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:115: OpenService - Service not installed
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2281: Did not find installed MBAMService
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7913: MakeUninstaller - src: , dest: C:\Program Files\Malwarebytes\Anti-Malware\mbuns.exe
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7931: [MakeUninstaller] Error! src does not exist
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2341: Error creating uninstaller
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2350: Copy C:\ProgramData\Malwarebytes Endpoint Agent\Plugins\Endpoint Protection\MBAMIService.exe to C:\Program Files\Malwarebytes\Anti-Malware\MBAMInstallerService.exe
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\MBAMWsc.exe", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\MBAMWsc.exe"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MBAMWsc.exe
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\servicepkg\\MBAMService.exe", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\MBAMService.exe"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MBAMService.exe
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\mbcut.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbcut.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbcut.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\offreg.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\offreg.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied offreg.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\ArwControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\ArwControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied ArwControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\CleanControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\CleanControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied CleanControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\CloudControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\CloudControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied CloudControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\LicenseControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\LicenseControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied LicenseControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\MWACControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\MWACControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MWACControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\PoliciesControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\PoliciesControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied PoliciesControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\RTPControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\RTPControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied RTPControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\ScanControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\ScanControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied ScanControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\TelemetryControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\TelemetryControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied TelemetryControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\AEControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\AEControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied AEControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\UpdateControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\UpdateControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied UpdateControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\SPControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\SPControllerImpl.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied SPControllerImpl.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\ActionsShim.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\ActionsShim.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied ActionsShim.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\BrowserSDKDLLShim.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\BrowserSDKDLLShim.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied BrowserSDKDLLShim.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\mbae.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbae.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbae.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\mbae64.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbae64.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbae64.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\mbae64.sys", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbae64.sys"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbae64.sys
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\mbae-api-na.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbae-api-na.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbae-api-na.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\arwlib.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\arwlib.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied arwlib.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\mbamsisdk.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbamsisdk.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbamsisdk.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\MBAMShim.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\MBAMShim.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MBAMShim.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\MBAMCoreV5.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\MBAMCore.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MBAMCoreV5.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\MBAMCoreV5.dll", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\MBAMCore.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MBAMCoreV5.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\MBAMCore_b.dll", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\MBAMCore_b.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MBAMCore_b.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\ActionsV5.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\Actions.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied ActionsV5.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\BrowserSDKDLLv5.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\BrowserSDKDLL.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied BrowserSDKDLLv5.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\igV5.exe", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\ig.exe"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied igV5.exe
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\sampleV5.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\sample.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied sampleV5.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\MwacLib.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\MwacLib.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MwacLib.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\SwissarmyShim.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\SwissarmyShim.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied SwissarmyShim.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\Swissarmy.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\Swissarmy.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied Swissarmy.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\rtp.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\rtp.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied rtp.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\SelfProtectionShim.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\SelfProtectionShim.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied SelfProtectionShim.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\SelfProtectionSdk.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\SelfProtectionSdk.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied SelfProtectionSdk.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\MbamPt.exe", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\MbamPt.exe"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MbamPt.exe
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\servicepkg\\mbamelam.sys", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbamelam.sys"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbamelam.sys
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\servicepkg\\mbamelam.cat", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbamelam.cat"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbamelam.cat
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\servicepkg\\mbamelam.inf", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbamelam.inf"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbamelam.inf
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\rules.mbdb", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\rules.mbdb"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied rules.mbdb
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\rdefs.mbdb", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\rdefs.mbdb"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied rdefs.mbdb
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\wprot2.mbdb", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\wprot2.mbdb"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied wprot2.mbdb
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\scan.mbdb", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\scan.mbdb"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied scan.mbdb
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\tids.mbdb", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\tids.mbdb"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied tids.mbdb
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\clean.mbdb", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\clean.mbdb"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied clean.mbdb
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\prot.mbdb", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\prot.mbdb"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied prot.mbdb
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\exclusions.txt", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\exclusions.txt"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied exclusions.txt
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\dynconfig.dat", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\dynconfig.dat"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied dynconfig.dat
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\dbmanifest2.dat", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\dbmanifest2.dat"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied dbmanifest2.dat
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\mbdigsig2.dat", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\mbdigsig2.dat"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbdigsig2.dat
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\Global.sr", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\Global.sr"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied Global.sr
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\Global.nm", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\Global.nm"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied Global.nm
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\cfg.bin", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\cfg.bin"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied cfg.bin
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\servicepkg\\srvversion.dat", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\srvversion.dat"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied srvversion.dat
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\version.dat", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\ctlrvers.dat"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied version.dat
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\dbclspkg\\version.dat", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\version.dat"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied version.dat
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\7z.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\7z.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied 7z.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\sentrynativesdk.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\sentrynativesdk.dll"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied sentrynativesdk.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp33414fb1d60111ee91cb7c8334bc68a5\\ctlrpkg\\MBAMCrashHandler.exe", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\MBAMCrashHandler.exe"
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MBAMCrashHandler.exe
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbamelam.sys
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbamelam.cat
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbamelam.inf
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied foobar.dll
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5981: Successfully copied MBAE driver file
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4957: Read INSTLR pkg version 4.6.8.311
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4974: Read SDKCTL pkg version 1.0.2249
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4991: Read DBCLS pkg version 1.0.81525
+2024-02-27 22:18:47 (UTC -0800) crypto.cpp:1166: Added certificate: Amazon Root CA 1
+2024-02-27 22:18:47 (UTC -0800) crypto.cpp:1166: Added certificate: Amazon Root CA 2
+2024-02-27 22:18:47 (UTC -0800) crypto.cpp:1166: Added certificate: Amazon Root CA 3
+2024-02-27 22:18:47 (UTC -0800) crypto.cpp:1166: Added certificate: Amazon Root CA 4
+2024-02-27 22:18:47 (UTC -0800) crypto.cpp:1166: Added certificate: DigiCert TLS RSA SHA256 2020 CA1
+2024-02-27 22:18:47 (UTC -0800) crypto.cpp:1166: Added certificate: Amazon RSA 2048 M01
+2024-02-27 22:18:47 (UTC -0800) crypto.cpp:1176: 7 certificates already installed
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5321: Successfully configured MB reg keys.
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3824: Creating default Service Configuration file.
+2024-02-27 22:18:47 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3645: Installing MBAMService with: "C:\Program Files\Malwarebytes\Anti-Malware\MBAMService.exe" /Service /Protected
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3652: Installing MBAMService returned: 0
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2558: Successfully installed MBAMService (SCM)
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4135: Creating SP config file
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4153: Creating default SP Config file.
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3918: Creating RTP config file
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3936: Creating default RtpConfig.json file.
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3956: Creating ARW config file
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3974: Creating default ARW Config file.
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4045: Creating AE config file
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4063: Creating default AE Config file.
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3994: Creating MWAC config file
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4012: Creating default MWAC Config file.
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4260: Reset config flags related to pending installer
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2635: Starting and connecting to Service
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:346: Starting service: MBAMService
+2024-02-27 22:18:48 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:378: StartService call succeeded. Waiting for service to start.
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2652: Setting Service Configuration
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:682: Version of C:\Program Files\Malwarebytes\Anti-Malware\MBAMService.exe: 3.2.0.1269
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4335: Enter SetServiceConfiguration
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4351: ServiceConfig updated successfully.
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2667: Setting Proxy Configuration
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2681: Redeeming License
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2737: Writing SPI file
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2751: Setting display language: en
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2874: Adding Shortcuts
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:6339: Skipping adding shortcuts for NCEP-WIN.
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4825: Old uninstall key not found
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4885: Skipping Uninstall value for NCEP-WIN.
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2907: Skipping BrowserGuard install
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1670: Running cleaner destructor
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1462: DoInstall returned 0
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1465: Installation successful.
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7157: Set RestartRequired to 0
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7167: Set ErrorStatus to 0
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1478: RebootNeeded: 0
+2024-02-27 22:18:54 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1514: Installation complete. Removing installer service.
+
+====== Malwarebytes Installer Service Version 4.0.0.559 started 2024-02-27 22:19:17 (UTC -0800) =====
+2024-02-27 22:19:17 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1106: ControlService (STOP) failed: 1062
+2024-02-27 22:19:17 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1197: Installer Service removed
+2024-02-27 22:19:17 (UTC -0800) d:\jenkins\workspace\n_mb4_installerservice\src\mbamiservice.cpp:208: Removed Service
+
+====== Malwarebytes Installer Service Version 4.0.0.559 started 2024-03-20 00:34:19 (UTC -0700) =====
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1276: Starting MBAMInstallerService version 4.0.0.559
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1344: Service Worker Started
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:6105: Read language code from ISvc registry: en
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:6210: Installing NCEP-WIN to C:\Program Files\Malwarebytes\Anti-Malware and C:\ProgramData\Malwarebytes\MBAMService
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\installedproducts.cpp:58: Found Malwarebytes version 4.6.8.311 installed as {680231FF-ABC9-40A2-A1E3-1AFD6FE45C8D}_is1 (64)
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\installedproducts.cpp:73: DisplayVersion=4.6.8.311, InstallLocation=C:\Program Files\Malwarebytes\Anti-Malware
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\installedproducts.cpp:58: Found Malwarebytes Endpoint Agent installed as {949D1792-E377-4348-8BC4-6D643EF49B21} (64)
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\installedproducts.cpp:73: DisplayVersion=1.2.0.1096, InstallLocation=C:\Program Files\Malwarebytes Endpoint Agent\
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1692: This is an upgrade
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1713: Clearing temp directory
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1774: Downloading packages.
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5543: Service package name: ncep-win.svc.64bit
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5544: Controller package name: ncep-win.ctlr.64bitv4
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5695: Modifier: /release
+2024-03-20 00:34:19 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:89: Downloading C:\WINDOWS\TEMP\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\servicepkg.7z
+2024-03-20 00:34:20 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:200: Server returned HTTP status code of: 200
+2024-03-20 00:34:20 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:319: Content-Length: 2333921
+2024-03-20 00:34:20 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5695: Modifier: /release
+2024-03-20 00:34:20 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:89: Downloading C:\WINDOWS\TEMP\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\ctlrpkg.7z
+2024-03-20 00:34:20 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:200: Server returned HTTP status code of: 200
+2024-03-20 00:34:20 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:319: Content-Length: 36396235
+2024-03-20 00:34:24 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5695: Modifier: /release
+2024-03-20 00:34:24 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:89: Downloading C:\WINDOWS\TEMP\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\dbclspkg.7z
+2024-03-20 00:34:24 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:200: Server returned HTTP status code of: 200
+2024-03-20 00:34:24 (UTC -0700) d:\jenkins\workspace\n_sucommon\src\sucommon\permalinkdownloader.cpp:319: Content-Length: 50701429
+2024-03-20 00:34:29 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1781: Successfully downloaded base packages.
+2024-03-20 00:34:29 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1807: Unzipping packages.
+2024-03-20 00:34:29 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:835: Read service/program version: 4.6.9.314
+2024-03-20 00:34:29 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1824: Installing new UI package: No
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:9519: Using MBAMWsc.exe
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:682: Version of C:\WINDOWS\TEMP\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\servicepkg\MBAMService.exe: 3.2.0.1269
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1873: New MBAMService.exe supports register cmd line option
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7913: MakeUninstaller - src: , dest: C:\Program Files\Malwarebytes\Anti-Malware\mbuns.exe
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7931: [MakeUninstaller] Error! src does not exist
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4549: Checking PFRO entries found
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4649: No NCEP-WIN PFRO entries found
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1934: IsMBESInstalled: No
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2109: Looking for installed MBAMService
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2127: Found installed MBAMService - Connecting
+2024-03-20 00:34:32 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:341: Service was already running, no need to start: MBAMService
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2130: Connected to MBAMService
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3414: Enter PrepareServiceUpdate
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:682: Version of C:\Program Files\Malwarebytes\Anti-Malware\MBAMService.exe: 3.2.0.1269
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3423: calling SetServiceConfiguration to set service auto-restart delay
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4335: Enter SetServiceConfiguration
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4351: ServiceConfig updated successfully.
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:768: Getting current SP state..
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:802: Setting SP state to 0
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3447: SetSelfProtectionState succeeded
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:1190: Setting Service LaunchProtected to 0
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:1263: getting current service LaunchProtected state
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3464: SetServiceLaunchProtected succeeded
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3488: SetSCMStopAccess succeeded
+2024-03-20 00:34:33 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2164: No need to call PrepareForUninstall (using /register)
+2024-03-20 00:34:41 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:505: Service stopped.
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2241: Skipping uninstall of MBAMService. will use /register
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4669: StopDriver: MBAMChameleon, delete = No
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4669: StopDriver: ESProtectionDriver, delete = No
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4669: StopDriver: MBAMFarFlt, delete = No
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4669: StopDriver: MBAMProtection, delete = No
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4669: StopDriver: MBAMSwissArmy, delete = No
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4669: StopDriver: MBAMWebProtection, delete = No
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7913: MakeUninstaller - src: , dest: C:\Program Files\Malwarebytes\Anti-Malware\mbuns.exe
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7931: [MakeUninstaller] Error! src does not exist
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2341: Error creating uninstaller
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2350: Copy C:\ProgramData\Malwarebytes Endpoint Agent\Plugins\Endpoint Protection\MBAMIService.exe to C:\Program Files\Malwarebytes\Anti-Malware\MBAMInstallerService.exe
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied MBAMWsc.exe
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied MBAMService.exe
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbcut.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied offreg.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\ArwControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\ArwControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied ArwControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\CleanControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\CleanControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied CleanControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\CloudControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\CloudControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied CloudControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\LicenseControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\LicenseControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied LicenseControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\MWACControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\MWACControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MWACControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\PoliciesControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\PoliciesControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied PoliciesControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\RTPControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\RTPControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied RTPControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\ScanControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\ScanControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied ScanControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\TelemetryControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\TelemetryControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied TelemetryControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\AEControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\AEControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied AEControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\UpdateControllerImpl.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\UpdateControllerImpl.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied UpdateControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied SPControllerImpl.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\ActionsShim.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\ActionsShim.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied ActionsShim.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied BrowserSDKDLLShim.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\mbae.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbae.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbae.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\mbae64.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbae64.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbae64.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbae64.sys
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\mbae-api-na.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbae-api-na.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbae-api-na.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied arwlib.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\mbamsisdk.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\mbamsisdk.dll"
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbamsisdk.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied MBAMShim.dll
+2024-03-20 00:34:43 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied MBAMCoreV5.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied MBAMCoreV5.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied MBAMCore_b.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied ActionsV5.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied BrowserSDKDLLv5.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied igV5.exe
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied sampleV5.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied MwacLib.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied SwissarmyShim.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied Swissarmy.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied rtp.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied SelfProtectionShim.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied SelfProtectionSdk.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied MbamPt.exe
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbamelam.sys
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbamelam.cat
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbamelam.inf
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\dbclspkg\\rules.mbdb", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\rules.mbdb"
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied rules.mbdb
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied rdefs.mbdb
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied wprot2.mbdb
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied scan.mbdb
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied tids.mbdb
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied clean.mbdb
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied prot.mbdb
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied exclusions.txt
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied dynconfig.dat
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\dbclspkg\\dbmanifest2.dat", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\dbmanifest2.dat"
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied dbmanifest2.dat
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\dbclspkg\\mbdigsig2.dat", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\mbdigsig2.dat"
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied mbdigsig2.dat
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\dbclspkg\\Global.sr", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\Global.sr"
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied Global.sr
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\dbclspkg\\Global.nm", DEST: "C:\\ProgramData\\Malwarebytes\\MBAMService\\Global.nm"
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied Global.nm
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied cfg.bin
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\servicepkg\\srvversion.dat", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\srvversion.dat"
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied srvversion.dat
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\version.dat", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\ctlrvers.dat"
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied version.dat
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\dbclspkg\\version.dat", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\version.dat"
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied version.dat
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied 7z.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\sentrynativesdk.dll", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\sentrynativesdk.dll"
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied sentrynativesdk.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8079: Copy SRC: "C:\\WINDOWS\\TEMP\\MBInstallTemp4366553ee68c11ee816f7c8334bc68a5\\ctlrpkg\\MBAMCrashHandler.exe", DEST: "C:\\Program Files\\Malwarebytes\\Anti-Malware\\MBAMCrashHandler.exe"
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8151: Copied MBAMCrashHandler.exe
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbamelam.sys
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbamelam.cat
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied mbamelam.inf
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:8158: Already copied foobar.dll
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4957: Read INSTLR pkg version 4.6.9.314
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4974: Read SDKCTL pkg version 1.0.2276
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4991: Read DBCLS pkg version 1.0.82374
+2024-03-20 00:34:44 (UTC -0700) crypto.cpp:1176: 13 certificates already installed
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:5321: Successfully configured MB reg keys.
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2505: Invoking MBAMService /register
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3718: Register MBAMService with: "C:\Program Files\Malwarebytes\Anti-Malware\MBAMService.exe" /Register
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3724: Register MBAMService returned: 0
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2515: Successfully registered MBAMService (COM)
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2520: Calling EnableELAMLaunchProtectedMode
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3760: Enable ELAM Protected Launch mode with: "C:\Program Files\Malwarebytes\Anti-Malware\MBAMService.exe" /ELAM
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3766: MBAMService ELAM option returned: 0
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2523: EnableELAMLaunchProtectedMode succeeded
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4135: Creating SP config file
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4148: Found SP Config file
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3918: Creating RTP config file
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3931: Found RtpConfig.json file.
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3956: Creating ARW config file
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3969: Found ARW Config file
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4045: Creating AE config file
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4058: Found AE Config file
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3994: Creating MWAC config file
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4007: Found MWAC Config file
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4260: Reset config flags related to pending installer
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2635: Starting and connecting to Service
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:346: Starting service: MBAMService
+2024-03-20 00:34:44 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:378: StartService call succeeded. Waiting for service to start.
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2652: Setting Service Configuration
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:682: Version of C:\Program Files\Malwarebytes\Anti-Malware\MBAMService.exe: 3.2.0.1269
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4335: Enter SetServiceConfiguration
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4351: ServiceConfig updated successfully.
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2667: Setting Proxy Configuration
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2681: Redeeming License
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3510: Enter FinishServiceUpdate
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3526: SetSCMStopAccess succeeded
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:1190: Setting Service LaunchProtected to 1
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:1263: getting current service LaunchProtected state
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:1287: Service LaunchProtected is already in desired state: 1
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3541: SetServiceLaunchProtected succeeded
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:768: Getting current SP state..
+2024-03-20 00:34:50 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamservice.cpp:802: Setting SP state to 1
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:3554: SetSelfProtectionState succeeded
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2737: Writing SPI file
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2874: Adding Shortcuts
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:6339: Skipping adding shortcuts for NCEP-WIN.
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:4885: Skipping Uninstall value for NCEP-WIN.
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:2907: Skipping BrowserGuard install
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1670: Running cleaner destructor
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1462: DoInstall returned 0
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1465: Installation successful.
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7157: Set RestartRequired to 0
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:7167: Set ErrorStatus to 0
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1478: RebootNeeded: 0
+2024-03-20 00:34:51 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1514: Installation complete. Removing installer service.
+
+====== Malwarebytes Installer Service Version 4.0.0.559 started 2024-03-20 00:35:09 (UTC -0700) =====
+2024-03-20 00:35:09 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1106: ControlService (STOP) failed: 1062
+2024-03-20 00:35:09 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\installerservice.cpp:1197: Installer Service removed
+2024-03-20 00:35:09 (UTC -0700) d:\jenkins\workspace\n_mb4_installerservice\src\mbamiservice.cpp:208: Removed Service

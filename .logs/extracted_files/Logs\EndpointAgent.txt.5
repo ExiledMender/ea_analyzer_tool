@@ -1,0 +1,243 @@
+﻿2024-05-06 19:00:12,384-07:00 [4964 ] [31] INFO  EAEngine SessionChanged 1 Reason:SessionLock
+2024-05-06 19:00:12,496-07:00 [4964 ] [68] INFO  EAService Power event : Suspend
+2024-05-06 19:00:13,219-07:00 [4964 ] [21] INFO  NebulaWebSocket WebSocket Error. System.IO.IOException: Unable to read data from the transport connection: An established connection was aborted by the software in your host machine. ---> System.Net.Sockets.SocketException: An established connection was aborted by the software in your host machine
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Security._SslStream.EndRead(IAsyncResult asyncResult)
+   at SuperSocket.ClientEngine.SslStreamTcpSession.OnDataRead(IAsyncResult result)
+2024-05-06 19:00:13,219-07:00 [4964 ] [21] INFO  NebulaWebSocket WebSocket Closed
+2024-05-06 19:00:13,219-07:00 [4964 ] [21] INFO  NebulaWebSocket Reconnect Attempt
+2024-05-06 19:00:13,308-07:00 [4964 ] [76] INFO  NebulaCommunicator Pausing Nebula communication processing
+2024-05-06 19:00:13,370-07:00 [4964 ] [76] INFO  NetworkConfigurationMonitor Network Availability Change Detected. Available:False
+2024-05-06 19:10:13,077-07:00 [4964 ] [68] INFO  EAService Power event : ResumeAutomatic
+2024-05-06 19:10:13,643-07:00 [4964 ] [31] INFO  EAService Power event : ResumeSuspend
+2024-05-06 19:10:13,643-07:00 [4964 ] [31] INFO  EAService Calling EngineController resume
+2024-05-06 19:10:13,643-07:00 [4964 ] [31] INFO  EAEngine Service Resume... Check Sirius for updates
+2024-05-06 19:10:13,706-07:00 [4964 ] [23] INFO  AgentInfoSender DelayPostAgent thread terminated
+2024-05-06 19:10:13,706-07:00 [4964 ] [31] INFO  EAEngine LoadEAPolicy : policy persisted using engine version:1.2.0.1096 Loading using engine version:1.2.0.1122
+2024-05-06 19:10:13,706-07:00 [4964 ] [31] INFO  EAPolicy protect_service prop found in policy -- value is True
+2024-05-06 19:10:13,706-07:00 [4964 ] [31] INFO  EAEngine Loaded policy from disk, ETag: 9ab24852ff00f0e8f9211aaa2717a7e6:3b5af464-9329-466a-85f2-56c9b7ff7168:30
+2024-05-06 19:10:13,721-07:00 [4964 ] [77] INFO  AgentInfoSender DelayPostAgent thread started
+2024-05-06 19:10:13,721-07:00 [4964 ] [31] INFO  ExtraPropSetHandler SetPropertyValue key=pause_updates value=False
+2024-05-06 19:10:13,721-07:00 [4964 ] [31] INFO  ExtraPropSetHandler SetPropertyValue key=pause_updates value=False
+2024-05-06 19:10:13,721-07:00 [4964 ] [31] INFO  ExtraPropSetHandler Fire_OnExtraPropertyChanged key=pause_updates value=False
+2024-05-06 19:10:13,721-07:00 [4964 ] [31] INFO  MBAMPlugin ExtraPropertyChanged - key:pause_updates val:False
+2024-05-06 19:10:13,721-07:00 [4964 ] [31] INFO  EAEngine Service Version:1.2.0.572, EngineVersion: 1.2.0.1122
+2024-05-06 19:10:13,721-07:00 [4964 ] [31] INFO  SiriusWrapper Sirius channel: release
+2024-05-06 19:10:13,721-07:00 [4964 ] [78] INFO  MBAMPlugin IsUpdatePaused is false
+2024-05-06 19:10:13,737-07:00 [4964 ] [78] INFO  MBAMPlugin Plugin state changing to Updating from Idle
+2024-05-06 19:10:13,737-07:00 [4964 ] [78] INFO  ProtectionUpdateCommand Checking for updates...
+2024-05-06 19:10:13,737-07:00 [4964 ] [13] INFO  ProtectionUpdateCommand Update Progress Package:UPT_NA phase:UpdatePhaseCheck stage:1 stageCount:1 error:0
+2024-05-06 19:10:13,862-07:00 [4964 ] [31] INFO  HttpMessageLoggingHandler Sending request to https://sirius.mwbsys.com/api/v1/updates/manifest
+2024-05-06 19:10:13,862-07:00 [4964 ] [31] INFO  HttpMessageLoggingHandler Headers
+mb_machine=ed553f8e2419cb2230d25f96a42b244a00fee118
+mb_neb_machine=3d6e9af7-9965-461e-84d2-0a04d8cd775d
+mb_neb_account=7529e7ab-a2e7-4b1f-ba79-22c505de8206
+Accept=application/json
+Authorization=*****BK2V
+ignore-metering=False
+2024-05-06 19:10:13,862-07:00 [4964 ] [31] INFO  HttpMessageLoggingHandler Request content {"product":"epa-win","build":"common","semver":"1.2.5","os_version":"10.0.19045","installation_token":"epa.win.ed553f8e2419cb2230d25f96a42b244a00fee118","installed_packages":[{"name":"epa.win.plugin.mbam","semver":"1.2.1193","channel":"release"},{"name":"epa.win.plugin.assetmanager","semver":"1.2.700","channel":"release"},{"name":"epa.win.plugin.bfp","semver":"1.2.338","channel":"release"},{"name":"epa.win.svc","semver":"1.2.572","channel":"release"},{"name":"epa.win.engine","semver":"1.2.1122","channel":"release"},{"name":"epa.win.useragent","semver":"1.2.488","channel":"release"}]}
+2024-05-06 19:10:13,877-07:00 [4964 ] [68] ERROR SiriusWrapper Error checking for updates; status code: 
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'sirius.mwbsys.com'
+   at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext& context)
+   at System.Net.Http.HttpClientHandler.GetRequestStreamCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.SiriusIntegration.SiriusWrapper.<CheckForUpdates>d__27.MoveNext()
+2024-05-06 19:10:13,877-07:00 [4964 ] [68] INFO  SiriusWrapper Error loading package information from sirius
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'sirius.mwbsys.com'
+   at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext& context)
+   at System.Net.Http.HttpClientHandler.GetRequestStreamCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.SiriusIntegration.SiriusWrapper.<CheckForUpdates>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.SiriusIntegration.SiriusWrapper.<GetPluginVersionInfo>d__29.MoveNext()
+2024-05-06 19:10:13,877-07:00 [4964 ] [31] INFO  EAEngine Error fetching update response from sirius
+System.AggregateException: One or more errors occurred. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'sirius.mwbsys.com'
+   at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext& context)
+   at System.Net.Http.HttpClientHandler.GetRequestStreamCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.SiriusIntegration.SiriusWrapper.<CheckForUpdates>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.SiriusIntegration.SiriusWrapper.<GetPluginVersionInfo>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.Policies.PolicyHandler.<CheckForUpdates>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.Policies.PolicyHandler.<CheckForUpdates>d__12.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at EAEngine.EAEngine.CheckSiriusWithResult()
+---> (Inner Exception #0) System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'sirius.mwbsys.com'
+   at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext& context)
+   at System.Net.Http.HttpClientHandler.GetRequestStreamCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.SiriusIntegration.SiriusWrapper.<CheckForUpdates>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.SiriusIntegration.SiriusWrapper.<GetPluginVersionInfo>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.Policies.PolicyHandler.<CheckForUpdates>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at EAEngine.Policies.PolicyHandler.<CheckForUpdates>d__12.MoveNext()<---
+
+2024-05-06 19:10:13,877-07:00 [4964 ] [31] INFO  EAEngine Scheduling for failure
+2024-05-06 19:10:15,018-07:00 [4964 ] [38] INFO  ProtectionUpdateCommand Update Progress Package:UPT_NA phase:UpdatePhaseCheck stage:0 stageCount:0 error:102
+2024-05-06 19:10:15,018-07:00 [4964 ] [38] INFO  ProtectionUpdateCommand Update Progress Package:UPT_NA phase:UpdatePhaseComplete stage:1 stageCount:1 error:0
+2024-05-06 19:10:15,018-07:00 [4964 ] [38] INFO  ProtectionUpdateCommand Update Progress Package:UPT_NA phase:UpdatePhaseIdle stage:1 stageCount:1 error:0
+2024-05-06 19:10:15,018-07:00 [4964 ] [78] INFO  ProtectionUpdateCommand Updates completed. Status:0
+2024-05-06 19:10:15,018-07:00 [4964 ] [78] INFO  EAEngine Post results to Nebula async invoked by _PrivateProcessMessage
+2024-05-06 19:10:15,112-07:00 [4964 ] [68] INFO  AgentInfoCollector Gathering plugin data from AssetMgmtPlugin
+2024-05-06 19:10:15,127-07:00 [4964 ] [68] INFO  AgentInfoCollector Gathering plugin data from Brute Force Protection Plugin
+2024-05-06 19:10:15,127-07:00 [4964 ] [68] INFO  AgentInfoCollector Gathering plugin data from MBAMPlugin
+2024-05-06 19:10:15,127-07:00 [4964 ] [68] INFO  AgentInfoCollector Get plugin data complete
+2024-05-06 19:10:15,159-07:00 [4964 ] [68] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP
+2024-05-06 19:10:15,159-07:00 [4964 ] [68] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\CDF
+2024-05-06 19:10:15,159-07:00 [4964 ] [68] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\CDF\v4.0
+2024-05-06 19:10:15,159-07:00 [4964 ] [68] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4
+2024-05-06 19:10:15,159-07:00 [4964 ] [68] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client
+2024-05-06 19:10:15,159-07:00 [4964 ] [68] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1033
+2024-05-06 19:10:15,159-07:00 [4964 ] [68] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full
+2024-05-06 19:10:15,159-07:00 [4964 ] [68] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1033
+2024-05-06 19:10:15,159-07:00 [4964 ] [68] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0
+2024-05-06 19:10:15,159-07:00 [4964 ] [68] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0\Client
+2024-05-06 19:10:15,159-07:00 [4964 ] [78] INFO  AgentInfoSender Send forced
+2024-05-06 19:10:15,174-07:00 [4964 ] [78] INFO  MBAMPlugin Plugin state changing to Idle from Updating
+2024-05-06 19:10:18,156-07:00 [4964 ] [60] INFO  NebulaCommunicator Resuming Nebula communication processing
+2024-05-06 19:10:18,218-07:00 [4964 ] [60] INFO  NetworkConfigurationMonitor Network Availability Change Detected. Available:True
+2024-05-06 19:10:28,668-07:00 [4964 ] [31] INFO  NetworkConfigurationMonitor Network configuration change detected - Collect and send Agent Info initiated.
+2024-05-06 19:10:28,749-07:00 [4964 ] [31] INFO  AgentInfoCollector Gathering plugin data from AssetMgmtPlugin
+2024-05-06 19:10:28,749-07:00 [4964 ] [31] INFO  AgentInfoCollector Gathering plugin data from Brute Force Protection Plugin
+2024-05-06 19:10:28,749-07:00 [4964 ] [31] INFO  AgentInfoCollector Gathering plugin data from MBAMPlugin
+2024-05-06 19:10:28,764-07:00 [4964 ] [31] INFO  AgentInfoCollector Get plugin data complete
+2024-05-06 19:10:28,780-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP
+2024-05-06 19:10:28,780-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\CDF
+2024-05-06 19:10:28,780-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\CDF\v4.0
+2024-05-06 19:10:28,780-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4
+2024-05-06 19:10:28,780-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client
+2024-05-06 19:10:28,780-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1033
+2024-05-06 19:10:28,780-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full
+2024-05-06 19:10:28,780-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1033
+2024-05-06 19:10:28,780-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0
+2024-05-06 19:10:28,780-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0\Client
+2024-05-06 19:10:42,204-07:00 [4964 ] [21] INFO  NebulaWebSocket Reconnect Attempt
+2024-05-06 19:10:53,307-07:00 [4964 ] [60] INFO  BoomerangHandler Nebula Event name: event.command.received, Command Context: uuid:,scheduleid:,userjobid:b2777d26-63c9-4543-a9b3-a5487de55a3b,command:command.engine.getconfiguration
+2024-05-06 19:10:53,307-07:00 [4964 ] [60] INFO  EAEngine Post results to Nebula async invoked by NebulaEvent
+2024-05-06 19:10:53,307-07:00 [4964 ] [52] INFO  NebulaCommunicator Post to Nebula - Id: 0e179c45-8838-4bcb-b043-9b15ea5ad3b3 - Created: 5/6/2024 7:10:53 PM - Size: 332 - Data:
+	{"user":"","job_id":"","schedule_id":"","schedule_etag":"","type":"BOOMERANG_EVENT","data":"{\"event_name\":\"event.command.received\",\"error_code\":0,\"error_message\":\"\",\"timestamp\":\"2024-05-07T02:10:53.3073685Z\"}","user_job_id":"b2777d26-63c9-4543-a9b3-a5487de55a3b","started_at_local":"2024-05-06T19:10:53.3073685-07:00"}
+2024-05-06 19:10:53,307-07:00 [4964 ] [78] INFO  BoomerangHandler Nebula Event name: event.command.start, Command Context: uuid:,scheduleid:,userjobid:b2777d26-63c9-4543-a9b3-a5487de55a3b,command:command.engine.getconfiguration
+2024-05-06 19:10:53,307-07:00 [4964 ] [78] INFO  EAEngine Post results to Nebula async invoked by NebulaEvent
+2024-05-06 19:10:53,307-07:00 [4964 ] [78] INFO  EAEngine Post results to Nebula async invoked by Execute
+2024-05-06 19:10:53,307-07:00 [4964 ] [78] INFO  BoomerangHandler Nebula Event name: event.command.success, Command Context: uuid:,scheduleid:,userjobid:b2777d26-63c9-4543-a9b3-a5487de55a3b,command:command.engine.getconfiguration
+2024-05-06 19:10:53,307-07:00 [4964 ] [78] INFO  EAEngine Post results to Nebula async invoked by NebulaEvent
+2024-05-06 19:10:53,557-07:00 [4964 ] [52] INFO  NebulaCommunicator Post to Nebula - Id: 3da7dd1e-911f-4dff-89cc-b4a93ddc9eeb - Created: 5/6/2024 7:10:53 PM - Size: 331 - Data:
+	{"user":"","job_id":"","schedule_id":"","schedule_etag":"","type":"BOOMERANG_EVENT","data":"{\"event_name\":\"event.command.success\",\"error_code\":0,\"error_message\":\"\",\"timestamp\":\"2024-05-07T02:10:53.3073685Z\"}","user_job_id":"b2777d26-63c9-4543-a9b3-a5487de55a3b","started_at_local":"2024-05-06T19:10:53.3073685-07:00"}
+2024-05-06 19:10:53,668-07:00 [4964 ] [52] INFO  NebulaCommunicator Post to Nebula - Id: 34e1650c-7e76-4791-ab13-0e42a12b7d78 - Created: 5/6/2024 7:10:53 PM - Size: 329 - Data:
+	{"user":"","job_id":"","schedule_id":"","schedule_etag":"","type":"BOOMERANG_EVENT","data":"{\"event_name\":\"event.command.start\",\"error_code\":0,\"error_message\":\"\",\"timestamp\":\"2024-05-07T02:10:53.3073685Z\"}","user_job_id":"b2777d26-63c9-4543-a9b3-a5487de55a3b","started_at_local":"2024-05-06T19:10:53.3073685-07:00"}
+2024-05-06 19:11:12,208-07:00 [4964 ] [21] INFO  NebulaWebSocket Reconnect Attempt
+2024-05-06 19:11:18,094-07:00 [4964 ] [39] INFO  BoomerangHandler Calling machine sync api
+2024-05-06 19:11:18,199-07:00 [4964 ] [16] INFO  BoomerangHandler Acknowledge WSS endpoint is https://socket.cloud.malwarebytes.com/v2
+2024-05-06 19:11:18,199-07:00 [4964 ] [16] INFO  BoomerangHandler Acknowledge boomerang is https://socket.cloud.malwarebytes.com/
+2024-05-06 19:11:18,199-07:00 [4964 ] [16] INFO  NebulaWebSocket WebSocket disconnecting...
+2024-05-06 19:11:18,577-07:00 [4964 ] [78] INFO  NebulaWebSocket WebSocket Opened
+2024-05-06 19:11:23,221-07:00 [4964 ] [16] INFO  BoomerangHandler Sync -- ExclusionEtag [9b78497013a5eca7e27bfbfa11cbe049]
+2024-05-06 19:11:28,908-07:00 [4964 ] [61] INFO  NetworkConfigurationMonitor Network configuration change detected - Collect and send Agent Info initiated.
+2024-05-06 19:11:29,002-07:00 [4964 ] [31] INFO  AgentInfoCollector Gathering plugin data from AssetMgmtPlugin
+2024-05-06 19:11:29,002-07:00 [4964 ] [31] INFO  AgentInfoCollector Gathering plugin data from Brute Force Protection Plugin
+2024-05-06 19:11:29,002-07:00 [4964 ] [31] INFO  AgentInfoCollector Gathering plugin data from MBAMPlugin
+2024-05-06 19:11:29,018-07:00 [4964 ] [31] INFO  AgentInfoCollector Get plugin data complete
+2024-05-06 19:11:29,019-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP
+2024-05-06 19:11:29,019-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\CDF
+2024-05-06 19:11:29,019-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\CDF\v4.0
+2024-05-06 19:11:29,019-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4
+2024-05-06 19:11:29,019-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client
+2024-05-06 19:11:29,019-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1033
+2024-05-06 19:11:29,019-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full
+2024-05-06 19:11:29,019-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1033
+2024-05-06 19:11:29,019-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0
+2024-05-06 19:11:29,019-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0\Client
+2024-05-06 19:11:42,220-07:00 [4964 ] [21] INFO  NebulaWebSocket WebSocket Closed
+2024-05-06 19:11:59,096-07:00 [4964 ] [31] INFO  NetworkConfigurationMonitor Network configuration change detected - Collect and send Agent Info initiated.
+2024-05-06 19:11:59,174-07:00 [4964 ] [31] INFO  AgentInfoCollector Gathering plugin data from AssetMgmtPlugin
+2024-05-06 19:11:59,189-07:00 [4964 ] [31] INFO  AgentInfoCollector Gathering plugin data from Brute Force Protection Plugin
+2024-05-06 19:11:59,189-07:00 [4964 ] [31] INFO  AgentInfoCollector Gathering plugin data from MBAMPlugin
+2024-05-06 19:11:59,189-07:00 [4964 ] [31] INFO  AgentInfoCollector Get plugin data complete
+2024-05-06 19:11:59,205-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP
+2024-05-06 19:11:59,205-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\CDF
+2024-05-06 19:11:59,205-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\CDF\v4.0
+2024-05-06 19:11:59,205-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4
+2024-05-06 19:11:59,205-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client
+2024-05-06 19:11:59,205-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1033
+2024-05-06 19:11:59,205-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full
+2024-05-06 19:11:59,205-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1033
+2024-05-06 19:11:59,205-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0
+2024-05-06 19:11:59,205-07:00 [4964 ] [31] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0\Client
+2024-05-06 19:12:02,128-07:00 [4964 ] [61] INFO  EAService SessionChanged: 1 Reason:SessionUnlock
+2024-05-06 19:12:02,131-07:00 [4964 ] [61] INFO  EAEngine SessionChanged 1 Reason:SessionUnlock
+2024-05-06 19:12:02,241-07:00 [4964 ] [31] INFO  MBAMPlugin Located the service and it is Running
+2024-05-06 19:12:13,733-07:00 [4964 ] [77] INFO  AgentInfoSender Posting agent info to server: {"account_token":"db29875f-bd5a-4db3-b9e6-455b462ce0b9","domain_name":null,"host_name":"WX14556W173","fully_qualified_host_name":"WX14556W173","dhcp_scope_name":"","os_info":{"os_platform":"Windows","os_version":"10.0.19045","os_architecture":"Amd64","os_release_name":"Microsoft Windows 10 Enterprise","os_type":"Workstation"},"engine_version":"1.2.0.1122","service_version":"1.2.0.572","tray_version":["1.2.0.488"],"object_guid":null,"object_sid":null,"culture":"en-US","last_user":"AzureAD\\NursingStaff-KingsNu","time_zone":"America/Los_Angeles","policy_etag":"9ab24852ff00f0e8f9211aaa2717a7e6:3b5af464-9329-466a-85f2-56c9b7ff7168:30","agent_machine_id":"ed553f8e2419cb2230d25f96a42b244a00fee118","serial_number":"BN95H3KG21407","nics":[{"mac_address":"7C8334BC68A5","description":"Realtek PCIe GbE Family Controller","ips":["169.254.226.4"]},{"mac_address":"286B35F45079","description":"Intel(R) Dual Band Wireless-AC 7265","ips":["10.148.49.222"]}],"plugins":[{"product_name":"Asset Manager","plugin_version":"1.2.0.700","reboot_reasons":0},{"product_name":"Windows Remote Intrusion Detection and Prevention","plugin_version":"1.2.0.338"},{"product_name":"Endpoint Protection","sdk_version":"4.6.9.314","component_package_version":"1.0.2276","update_package_version":"1.0.84355","update_package_pub_version":"2024.05.07.01","plugin_version":"1.2.0.1193","reboot_reasons":0,"protection_status":{"rtp":"started","ae":"started","arw":"started","mwac":"started","sp":"started"}}],"software_update_pending":{},"schedules":[{"schedule_id":"cdc8a723-6754-4f6b-bf23-f2cc2e52470f","schedule_etag":"31535fba4245794a64ded9fd9708f559"},{"schedule_id":"d0e110d6-6dc2-436f-a5ce-3b51cd4d151e","schedule_etag":"b741d787ec9f8649565ecba98d8a6bee"}],"net_framework_versions":["4.0.0.0","4.8.09037"],"alerts":{"codes":null}}
+2024-05-06 19:12:13,733-07:00 [4964 ] [77] INFO  EAEngine Post results to Nebula async invoked by DelayPostAgent
+2024-05-06 19:12:13,733-07:00 [4964 ] [52] INFO  NebulaCommunicator Post to Nebula - Id: 1e6fa7f0-61e1-44d9-b161-81bf9159c6cb - Created: 5/6/2024 7:12:13 PM - Size: 2194 - Data:
+	{"user":null,"job_id":null,"schedule_id":null,"schedule_etag":null,"type":"AGENT_INFORMATION","data":"{\"account_token\":\"db29875f-bd5a-4db3-b9e6-455b462ce0b9\",\"domain_name\":null,\"host_name\":\"WX14556W173\",\"fully_qualified_host_name\":\"WX14556W173\",\"dhcp_scope_name\":\"\",\"os_info\":{\"os_platform\":\"Windows\",\"os_version\":\"10.0.19045\",\"os_architecture\":\"Amd64\",\"os_release_name\":\"Microsoft Windows 10 Enterprise\",\"os_type\":\"Workstation\"},\"engine_version\":\"1.2.0.1122\",\"service_version\":\"1.2.0.572\",\"tray_version\":[\"1.2.0.488\"],\"object_guid\":null,\"object_sid\":null,\"culture\":\"en-US\",\"last_user\":\"AzureAD\\\\NursingStaff-KingsNu\",\"time_zone\":\"America/Los_Angeles\",\"policy_etag\":\"9ab24852ff00f0e8f9211aaa2717a7e6:3b5af464-9329-466a-85f2-56c9b7ff7168:30\",\"agent_machine_id\":\"ed553f8e2419cb2230d25f96a42b244a00fee118\",\"serial_number\":\"BN95H3KG21407\",\"nics\":[{\"mac_address\":\"7C8334BC68A5\",\"description\":\"Realtek PCIe GbE Family Controller\",\"ips\":[\"169.254.226.4\"]},{\"mac_address\":\"286B35F45079\",\"description\":\"Intel(R) Dual Band Wireless-AC 7265\",\"ips\":[\"10.148.49.222\"]}],\"plugins\":[{\"product_name\":\"Asset Manager\",\"plugin_version\":\"1.2.0.700\",\"reboot_reasons\":0},{\"product_name\":\"Windows Remote Intrusion Detection and Prevention\",\"plugin_version\":\"1.2.0.338\"},{\"product_name\":\"Endpoint Protection\",\"sdk_version\":\"4.6.9.314\",\"component_package_version\":\"1.0.2276\",\"update_package_version\":\"1.0.84355\",\"update_package_pub_version\":\"2024.05.07.01\",\"plugin_version\":\"1.2.0.1193\",\"reboot_reasons\":0,\"protection_status\":{\"rtp\":\"started\",\"ae\":\"started\",\"arw\":\"started\",\"mwac\":\"started\",\"sp\":\"started\"}}],\"software_update_pending\":{},\"schedules\":[{\"schedule_id\":\"cdc8a723-6754-4f6b-bf23-f2cc2e52470f\",\"schedule_etag\":\"31535fba4245794a64ded9fd9708f559\"},{\"schedule_id\":\"d0e110d6-6dc2-436f-a5ce-3b51cd4d151e\",\"schedule_etag\":\"b741d787ec9f8649565ecba98d8a6bee\"}],\"net_framewo (trunc...)
+2024-05-06 19:14:13,743-07:00 [4964 ] [77] INFO  AgentInfoSender Posting agent info to server: {"account_token":"db29875f-bd5a-4db3-b9e6-455b462ce0b9","domain_name":null,"host_name":"WX14556W173","fully_qualified_host_name":"WX14556W173","dhcp_scope_name":"","os_info":{"os_platform":"Windows","os_version":"10.0.19045","os_architecture":"Amd64","os_release_name":"Microsoft Windows 10 Enterprise","os_type":"Workstation"},"engine_version":"1.2.0.1122","service_version":"1.2.0.572","tray_version":["1.2.0.488"],"object_guid":null,"object_sid":null,"culture":"en-US","last_user":"AzureAD\\NursingStaff-KingsNu","time_zone":"America/Los_Angeles","policy_etag":"9ab24852ff00f0e8f9211aaa2717a7e6:3b5af464-9329-466a-85f2-56c9b7ff7168:30","agent_machine_id":"ed553f8e2419cb2230d25f96a42b244a00fee118","serial_number":"BN95H3KG21407","nics":[{"mac_address":"7C8334BC68A5","description":"Realtek PCIe GbE Family Controller","ips":["10.148.49.130"]}],"plugins":[{"product_name":"Asset Manager","plugin_version":"1.2.0.700","reboot_reasons":0},{"product_name":"Windows Remote Intrusion Detection and Prevention","plugin_version":"1.2.0.338"},{"product_name":"Endpoint Protection","sdk_version":"4.6.9.314","component_package_version":"1.0.2276","update_package_version":"1.0.84355","update_package_pub_version":"2024.05.07.01","plugin_version":"1.2.0.1193","reboot_reasons":0,"protection_status":{"rtp":"started","ae":"started","arw":"started","mwac":"started","sp":"started"}}],"software_update_pending":{},"schedules":[{"schedule_id":"cdc8a723-6754-4f6b-bf23-f2cc2e52470f","schedule_etag":"31535fba4245794a64ded9fd9708f559"},{"schedule_id":"d0e110d6-6dc2-436f-a5ce-3b51cd4d151e","schedule_etag":"b741d787ec9f8649565ecba98d8a6bee"}],"net_framework_versions":["4.0.0.0","4.8.09037"],"alerts":{"codes":null}}
+2024-05-06 19:14:13,744-07:00 [4964 ] [77] INFO  EAEngine Post results to Nebula async invoked by DelayPostAgent
+2024-05-06 19:14:13,744-07:00 [4964 ] [52] INFO  NebulaCommunicator Post to Nebula - Id: c04c18a9-6391-40ec-9ce3-8776d6cf0a14 - Created: 5/6/2024 7:14:13 PM - Size: 2075 - Data:
+	{"user":null,"job_id":null,"schedule_id":null,"schedule_etag":null,"type":"AGENT_INFORMATION","data":"{\"account_token\":\"db29875f-bd5a-4db3-b9e6-455b462ce0b9\",\"domain_name\":null,\"host_name\":\"WX14556W173\",\"fully_qualified_host_name\":\"WX14556W173\",\"dhcp_scope_name\":\"\",\"os_info\":{\"os_platform\":\"Windows\",\"os_version\":\"10.0.19045\",\"os_architecture\":\"Amd64\",\"os_release_name\":\"Microsoft Windows 10 Enterprise\",\"os_type\":\"Workstation\"},\"engine_version\":\"1.2.0.1122\",\"service_version\":\"1.2.0.572\",\"tray_version\":[\"1.2.0.488\"],\"object_guid\":null,\"object_sid\":null,\"culture\":\"en-US\",\"last_user\":\"AzureAD\\\\NursingStaff-KingsNu\",\"time_zone\":\"America/Los_Angeles\",\"policy_etag\":\"9ab24852ff00f0e8f9211aaa2717a7e6:3b5af464-9329-466a-85f2-56c9b7ff7168:30\",\"agent_machine_id\":\"ed553f8e2419cb2230d25f96a42b244a00fee118\",\"serial_number\":\"BN95H3KG21407\",\"nics\":[{\"mac_address\":\"7C8334BC68A5\",\"description\":\"Realtek PCIe GbE Family Controller\",\"ips\":[\"10.148.49.130\"]}],\"plugins\":[{\"product_name\":\"Asset Manager\",\"plugin_version\":\"1.2.0.700\",\"reboot_reasons\":0},{\"product_name\":\"Windows Remote Intrusion Detection and Prevention\",\"plugin_version\":\"1.2.0.338\"},{\"product_name\":\"Endpoint Protection\",\"sdk_version\":\"4.6.9.314\",\"component_package_version\":\"1.0.2276\",\"update_package_version\":\"1.0.84355\",\"update_package_pub_version\":\"2024.05.07.01\",\"plugin_version\":\"1.2.0.1193\",\"reboot_reasons\":0,\"protection_status\":{\"rtp\":\"started\",\"ae\":\"started\",\"arw\":\"started\",\"mwac\":\"started\",\"sp\":\"started\"}}],\"software_update_pending\":{},\"schedules\":[{\"schedule_id\":\"cdc8a723-6754-4f6b-bf23-f2cc2e52470f\",\"schedule_etag\":\"31535fba4245794a64ded9fd9708f559\"},{\"schedule_id\":\"d0e110d6-6dc2-436f-a5ce-3b51cd4d151e\",\"schedule_etag\":\"b741d787ec9f8649565ecba98d8a6bee\"}],\"net_framework_versions\":[\"4.0.0.0\",\"4.8.09037\"],\"alerts\":{\"codes\":null}}","user_job_id":null,"started_at_local":"2024-05- (trunc...)
+2024-05-06 19:42:02,688-07:00 [4964 ] [76] INFO  MBAMPlugin Located the service and it is Running
+2024-05-06 19:47:18,029-07:00 [4964 ] [70] INFO  MBAMPlugin Update available notification received. Update Package: DbClsEng; Update available: True;New version: 1.0.84357; 
+2024-05-06 19:47:18,030-07:00 [4964 ] [70] INFO  MBAMPlugin Update available notification received. Update Package: DbClsEng; Update available: True;New version: 1.0.84357; 
+2024-05-06 19:47:18,289-07:00 [4964 ] [70] INFO  MBAMPlugin Update downloaded notification received. File Path: C:\PROGRAMDATA\MALWAREBYTES\MBAMSERVICE\dbclsupdate\delta1\dbcls.64bit.incr.7z; Update Package: DbClsEng; New version: 1.0.84357; Download Successful: True
+2024-05-06 19:47:25,938-07:00 [4964 ] [70] INFO  MBAMPlugin Update applied notification received. Update Package: DbClsEng; Successful: True;New version: 1.0.84357; 
+2024-05-06 19:47:25,938-07:00 [4964 ] [70] INFO  MBAMPlugin DBClsPkg Update successful
+2024-05-06 19:47:26,670-07:00 [4964 ] [70] INFO  MBAMPlugin Update applied notification received. Update Package: AE_dyn_config; Successful: True;New version: 0.0.1; 
+2024-05-06 19:47:26,701-07:00 [4964 ] [70] INFO  MBAMPlugin Update applied notification received. Update Package: AE_exclusions; Successful: True;New version: 0.0.1; 
+2024-05-06 19:47:28,949-07:00 [4964 ] [32] INFO  EAEngine Post results to Nebula async invoked by _PrivateProcessMessage
+2024-05-06 19:47:29,043-07:00 [4964 ] [22] INFO  AgentInfoCollector Gathering plugin data from AssetMgmtPlugin
+2024-05-06 19:47:29,058-07:00 [4964 ] [22] INFO  AgentInfoCollector Gathering plugin data from Brute Force Protection Plugin
+2024-05-06 19:47:29,058-07:00 [4964 ] [22] INFO  AgentInfoCollector Gathering plugin data from MBAMPlugin
+2024-05-06 19:47:29,058-07:00 [4964 ] [22] INFO  AgentInfoCollector Get plugin data complete
+2024-05-06 19:47:29,074-07:00 [4964 ] [22] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP
+2024-05-06 19:47:29,074-07:00 [4964 ] [22] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\CDF
+2024-05-06 19:47:29,074-07:00 [4964 ] [22] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\CDF\v4.0
+2024-05-06 19:47:29,074-07:00 [4964 ] [22] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4
+2024-05-06 19:47:29,074-07:00 [4964 ] [22] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client
+2024-05-06 19:47:29,074-07:00 [4964 ] [22] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\1033
+2024-05-06 19:47:29,074-07:00 [4964 ] [22] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full
+2024-05-06 19:47:29,074-07:00 [4964 ] [22] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1033
+2024-05-06 19:47:29,074-07:00 [4964 ] [22] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0
+2024-05-06 19:47:29,074-07:00 [4964 ] [22] INFO  RegistryCollector Process key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4.0\Client
+2024-05-06 19:47:29,089-07:00 [4964 ] [32] INFO  AgentInfoSender Send forced
+2024-05-06 19:47:29,089-07:00 [4964 ] [32] INFO  PostAgentInfoManager DelayedPost  -- Reset and wait for next PostAgentInfo request
+2024-05-06 19:48:13,882-07:00 [4964 ] [77] INFO  AgentInfoSender Posting agent info to server: {"account_token":"db29875f-bd5a-4db3-b9e6-455b462ce0b9","domain_name":null,"host_name":"WX14556W173","fully_qualified_host_name":"WX14556W173","dhcp_scope_name":"","os_info":{"os_platform":"Windows","os_version":"10.0.19045","os_architecture":"Amd64","os_release_name":"Microsoft Windows 10 Enterprise","os_type":"Workstation"},"engine_version":"1.2.0.1122","service_version":"1.2.0.572","tray_version":["1.2.0.488"],"object_guid":null,"object_sid":null,"culture":"en-US","last_user":"AzureAD\\NursingStaff-KingsNu","time_zone":"America/Los_Angeles","policy_etag":"9ab24852ff00f0e8f9211aaa2717a7e6:3b5af464-9329-466a-85f2-56c9b7ff7168:30","agent_machine_id":"ed553f8e2419cb2230d25f96a42b244a00fee118","serial_number":"BN95H3KG21407","nics":[{"mac_address":"7C8334BC68A5","description":"Realtek PCIe GbE Family Controller","ips":["10.148.49.130"]}],"plugins":[{"product_name":"Asset Manager","plugin_version":"1.2.0.700","reboot_reasons":0},{"product_name":"Windows Remote Intrusion Detection and Prevention","plugin_version":"1.2.0.338"},{"product_name":"Endpoint Protection","sdk_version":"4.6.9.314","component_package_version":"1.0.2276","update_package_version":"1.0.84357","update_package_pub_version":"2024.05.07.02","plugin_version":"1.2.0.1193","reboot_reasons":0,"protection_status":{"rtp":"started","ae":"started","arw":"started","mwac":"started","sp":"started"}}],"software_update_pending":{},"schedules":[{"schedule_id":"cdc8a723-6754-4f6b-bf23-f2cc2e52470f","schedule_etag":"31535fba4245794a64ded9fd9708f559"},{"schedule_id":"d0e110d6-6dc2-436f-a5ce-3b51cd4d151e","schedule_etag":"b741d787ec9f8649565ecba98d8a6bee"}],"net_framework_versions":["4.0.0.0","4.8.09037"],"alerts":{"codes":null}}
+2024-05-06 19:48:13,882-07:00 [4964 ] [77] INFO  EAEngine Post results to Nebula async invoked by DelayPostAgent
+2024-05-06 19:48:13,882-07:00 [4964 ] [52] INFO  NebulaCommunicator Post to Nebula - Id: 4ea6602b-90e8-4379-8130-761ea8ce07e7 - Created: 5/6/2024 7:48:13 PM - Size: 2075 - Data:
+	{"user":null,"job_id":null,"schedule_id":null,"schedule_etag":null,"type":"AGENT_INFORMATION","data":"{\"account_token\":\"db29875f-bd5a-4db3-b9e6-455b462ce0b9\",\"domain_name\":null,\"host_name\":\"WX14556W173\",\"fully_qualified_host_name\":\"WX14556W173\",\"dhcp_scope_name\":\"\",\"os_info\":{\"os_platform\":\"Windows\",\"os_version\":\"10.0.19045\",\"os_architecture\":\"Amd64\",\"os_release_name\":\"Microsoft Windows 10 Enterprise\",\"os_type\":\"Workstation\"},\"engine_version\":\"1.2.0.1122\",\"service_version\":\"1.2.0.572\",\"tray_version\":[\"1.2.0.488\"],\"object_guid\":null,\"object_sid\":null,\"culture\":\"en-US\",\"last_user\":\"AzureAD\\\\NursingStaff-KingsNu\",\"time_zone\":\"America/Los_Angeles\",\"policy_etag\":\"9ab24852ff00f0e8f9211aaa2717a7e6:3b5af464-9329-466a-85f2-56c9b7ff7168:30\",\"agent_machine_id\":\"ed553f8e2419cb2230d25f96a42b244a00fee118\",\"serial_number\":\"BN95H3KG21407\",\"nics\":[{\"mac_address\":\"7C8334BC68A5\",\"description\":\"Realtek PCIe GbE Family Controller\",\"ips\":[\"10.148.49.130\"]}],\"plugins\":[{\"product_name\":\"Asset Manager\",\"plugin_version\":\"1.2.0.700\",\"reboot_reasons\":0},{\"product_name\":\"Windows Remote Intrusion Detection and Prevention\",\"plugin_version\":\"1.2.0.338\"},{\"product_name\":\"Endpoint Protection\",\"sdk_version\":\"4.6.9.314\",\"component_package_version\":\"1.0.2276\",\"update_package_version\":\"1.0.84357\",\"update_package_pub_version\":\"2024.05.07.02\",\"plugin_version\":\"1.2.0.1193\",\"reboot_reasons\":0,\"protection_status\":{\"rtp\":\"started\",\"ae\":\"started\",\"arw\":\"started\",\"mwac\":\"started\",\"sp\":\"started\"}}],\"software_update_pending\":{},\"schedules\":[{\"schedule_id\":\"cdc8a723-6754-4f6b-bf23-f2cc2e52470f\",\"schedule_etag\":\"31535fba4245794a64ded9fd9708f559\"},{\"schedule_id\":\"d0e110d6-6dc2-436f-a5ce-3b51cd4d151e\",\"schedule_etag\":\"b741d787ec9f8649565ecba98d8a6bee\"}],\"net_framework_versions\":[\"4.0.0.0\",\"4.8.09037\"],\"alerts\":{\"codes\":null}}","user_job_id":null,"started_at_local":"2024-05- (trunc...)
+2024-05-06 20:10:13,012-07:00 [4964 ] [74] INFO  ScheduledEngineCheckSiriusJob Starting schedule: Engine checking sirius, siriusFailRetry
+2024-05-06 20:10:13,059-07:00 [4964 ] [77] INFO  AgentInfoSender DelayPostAgent thread terminated
+2024-05-06 20:10:13,059-07:00 [4964 ] [74] INFO  EAEngine LoadEAPolicy : policy persisted using engine version:1.2.0.1096 Loading using engine version:1.2.0.1122
+2024-05-06 20:10:13,059-07:00 [4964 ] [74] INFO  EAPolicy protect_service prop found in policy -- value is True
+2024-05-06 20:10:13,059-07:00 [4964 ] [74] INFO  EAEngine Loaded policy from disk, ETag: 9ab24852ff00f0e8f9211aaa2717a7e6:3b5af464-9329-466a-85f2-56c9b7ff7168:30
+2024-05-06 20:10:13,059-07:00 [4964 ] [76] INFO  AgentInfoSender DelayPostAgent thread started
+2024-05-06 20:10:13,059-07:00 [4964 ] [74] INFO  ExtraPropSetHandler SetPropertyValue key=pause_updates value=False
+2024-05-06 20:10:13,059-07:00 [4964 ] [74] INFO  ExtraPropSetHandler SetPropertyValue key=pause_updates value=False

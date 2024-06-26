@@ -1,0 +1,657 @@
+[
+  {
+    "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols",
+    "values": [],
+    "sub_keys": [
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.2",
+        "values": [],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.2\\Client",
+            "values": [
+              {
+                "value_name": "DisabledByDefault",
+                "value_kind": "DWord",
+                "value": 0
+              },
+              {
+                "value_name": "Enabled",
+                "value_kind": "DWord",
+                "value": 1
+              }
+            ],
+            "sub_keys": [],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      }
+    ],
+    "message": "Success"
+  },
+  {
+    "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa",
+    "values": [
+      {
+        "value_name": "auditbasedirectories",
+        "value_kind": "DWord",
+        "value": 0
+      },
+      {
+        "value_name": "auditbaseobjects",
+        "value_kind": "DWord",
+        "value": 0
+      },
+      {
+        "value_name": "Bounds",
+        "value_kind": "Binary",
+        "value": "ADAAAAAgAAA="
+      },
+      {
+        "value_name": "crashonauditfail",
+        "value_kind": "DWord",
+        "value": 0
+      },
+      {
+        "value_name": "fullprivilegeauditing",
+        "value_kind": "Binary",
+        "value": "AA=="
+      },
+      {
+        "value_name": "LimitBlankPasswordUse",
+        "value_kind": "DWord",
+        "value": 1
+      },
+      {
+        "value_name": "NoLmHash",
+        "value_kind": "DWord",
+        "value": 1
+      },
+      {
+        "value_name": "Security Packages",
+        "value_kind": "MultiString",
+        "value": [
+          "\"\""
+        ]
+      },
+      {
+        "value_name": "Notification Packages",
+        "value_kind": "MultiString",
+        "value": [
+          "scecli"
+        ]
+      },
+      {
+        "value_name": "Authentication Packages",
+        "value_kind": "MultiString",
+        "value": [
+          "msv1_0"
+        ]
+      },
+      {
+        "value_name": "disabledomaincreds",
+        "value_kind": "DWord",
+        "value": 0
+      },
+      {
+        "value_name": "everyoneincludesanonymous",
+        "value_kind": "DWord",
+        "value": 0
+      },
+      {
+        "value_name": "forceguest",
+        "value_kind": "DWord",
+        "value": 0
+      },
+      {
+        "value_name": "LsaCfgFlagsDefault",
+        "value_kind": "DWord",
+        "value": 0
+      },
+      {
+        "value_name": "LsaPid",
+        "value_kind": "DWord",
+        "value": 876
+      },
+      {
+        "value_name": "ProductType",
+        "value_kind": "DWord",
+        "value": 4
+      },
+      {
+        "value_name": "restrictanonymous",
+        "value_kind": "DWord",
+        "value": 0
+      },
+      {
+        "value_name": "restrictanonymoussam",
+        "value_kind": "DWord",
+        "value": 1
+      },
+      {
+        "value_name": "SecureBoot",
+        "value_kind": "DWord",
+        "value": 1
+      }
+    ],
+    "sub_keys": [
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\AccessProviders",
+        "values": [
+          {
+            "value_name": "MartaExtension",
+            "value_kind": "String",
+            "value": "ntmarta.dll"
+          },
+          {
+            "value_name": "ProviderOrder",
+            "value_kind": "MultiString",
+            "value": [
+              "Windows NT Access Provider"
+            ]
+          }
+        ],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\AccessProviders\\Windows NT Access Provider",
+            "values": [
+              {
+                "value_name": "ProviderPath",
+                "value_kind": "ExpandString",
+                "value": "C:\\WINDOWS\\system32\\ntmarta.dll"
+              }
+            ],
+            "sub_keys": [],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Audit",
+        "values": [],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Audit\\AuditPolicy",
+            "values": [
+              {
+                "value_name": "AuditPolicySD",
+                "value_kind": "Binary",
+                "value": "AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoCgu3Mydi0OukhR1OKoDjwAAACAAAAAAEGYAAAABAAAgAAAAY17DtH27RROXjFDSX74P15QfFXsLYjVx92TK6d8gOskAAAAADoAAAAACAAAgAAAAtO2wgQzfkclTRHMhXVAug+iBuydTXYZkV3zbRNWQaU1wAAAAY95/QhA6AzH7L7qFGfzin4FqBPcjmNSIJhTkICRqxBLhlqSjDZ1LasK4RdsUnfEh0zFt8kInf0GJD/+edH8889kZh8+khCSBnuvCgT8tfxKwwKzKnZJ+E7hj2gCIJyJJv2VvoqmV1+/r6ZiygzUfc0AAAAD30Y6hGJxtfYCY63k8h9zAw1B9Ftwfp+MEt4Z0dUh/E10zrbAHapljgyUbdmsHrxM9n13f9VLYxCynR9QLS/Po"
+              }
+            ],
+            "sub_keys": [],
+            "message": "Success"
+          },
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Audit\\PerUserAuditing",
+            "values": [],
+            "sub_keys": [
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Audit\\PerUserAuditing\\System",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              }
+            ],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\CentralizedAccessPolicies",
+        "values": [
+          {
+            "value_name": "MaxDataSize",
+            "value_kind": "DWord",
+            "value": 0
+          }
+        ],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\CentralizedAccessPolicies\\CAPEs",
+            "values": [],
+            "sub_keys": [],
+            "message": "Success"
+          },
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\CentralizedAccessPolicies\\CAPs",
+            "values": [],
+            "sub_keys": [],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\ComponentUpdates",
+        "values": [],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\ComponentUpdates\\Privileges",
+            "values": [
+              {
+                "value_name": "01F9BAE5-4C53-4339-A356-40E5B3A3E577",
+                "value_kind": "String",
+                "value": "PrivilegeAdd;S-1-5-80-3169285310-278349998-1452333686-3865143136-4212226833;SeServiceLogonRight"
+              },
+              {
+                "value_name": "C4C85B72-59EB-4DDB-9EF0-ECF40A264FF5",
+                "value_kind": "String",
+                "value": "PrivilegeAdd;S-1-5-80-3169285310-278349998-1452333686-3865143136-4212226833;SeSystemTimePrivilege"
+              }
+            ],
+            "sub_keys": [],
+            "message": "Success"
+          },
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\ComponentUpdates\\SecurityInstallationProvider",
+            "values": [],
+            "sub_keys": [
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\ComponentUpdates\\SecurityInstallationProvider\\S-1-5-19",
+                "values": [
+                  {
+                    "value_name": "Group1",
+                    "value_kind": "Binary",
+                    "value": "AQkAAAAAAAUgAAAAV5bYFs09uMc6tqttaC55bF76i11aEED6l0azBEN8QlQ="
+                  },
+                  {
+                    "value_name": "Group2",
+                    "value_kind": "Binary",
+                    "value": "AQkAAAAAAAUgAAAAG8pZeWUJ4xB6KfnLWRnZ1Zmppy2VRNq0co9K0wvZMCQ="
+                  },
+                  {
+                    "value_name": "Group3",
+                    "value_kind": "Binary",
+                    "value": "AQkAAAAAAAUgAAAAF4ge2nZHgIgzLxFD/lBT2z7cEk0Y9ACBfZL1aVebu5o="
+                  },
+                  {
+                    "value_name": "Group4",
+                    "value_kind": "Binary",
+                    "value": "AQkAAAAAAAUgAAAAUC6zADgDnX0E2TrNaW929tyV6ORG+oPfb1sX5a00/ic="
+                  },
+                  {
+                    "value_name": "Group5",
+                    "value_kind": "Binary",
+                    "value": "AQkAAAAAAAUgAAAAsHcK0p3mD2gDa1UvUu9JKLS6Vm/H5Vd0kKtEQo4yWHo="
+                  },
+                  {
+                    "value_name": "Group6",
+                    "value_kind": "Binary",
+                    "value": "AQkAAAAAAAUgAAAAkt+3WPHNDzPqYFNaUdtMUj6Lf7Hyj9GEBJ/QNJKTCac="
+                  }
+                ],
+                "sub_keys": [],
+                "message": "Success"
+              }
+            ],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp",
+        "values": [
+          {
+            "value_name": "DebugLogLevel",
+            "value_kind": "DWord",
+            "value": 0
+          }
+        ],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults",
+            "values": [],
+            "sub_keys": [
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowDefaultCredentials",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowDefaultCredentialsDomain",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowDefaultCredentialsWhenNTLMOnly",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowDefaultCredentialsWhenNTLMOnlyDomain",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowFreshCredentials",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowFreshCredentialsDomain",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowFreshCredentialsWhenNTLMOnly",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowFreshCredentialsWhenNTLMOnlyDomain",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowSavedCredentials",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowSavedCredentialsDomain",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowSavedCredentialsWhenNTLMOnly",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\AllowSavedCredentialsWhenNTLMOnlyDomain",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\DenyDefaultCredentials",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\DenyDefaultCredentialsDomain",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\DenyFreshCredentials",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\DenyFreshCredentialsDomain",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\DenySavedCredentials",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              },
+              {
+                "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Credssp\\PolicyDefaults\\DenySavedCredentialsDomain",
+                "values": [],
+                "sub_keys": [],
+                "message": "Success"
+              }
+            ],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Data",
+        "values": [
+          {
+            "value_name": "Pattern",
+            "value_kind": "Binary",
+            "value": "I13dOG5J1P32gHHBCLGp6A=="
+          }
+        ],
+        "sub_keys": [],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\DPL",
+        "values": [],
+        "sub_keys": [],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\FipsAlgorithmPolicy",
+        "values": [
+          {
+            "value_name": "Enabled",
+            "value_kind": "DWord",
+            "value": 0
+          }
+        ],
+        "sub_keys": [],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\GBG",
+        "values": [
+          {
+            "value_name": "GrafBlumGroup",
+            "value_kind": "Binary",
+            "value": "0Q0GLo9y7qyz"
+          }
+        ],
+        "sub_keys": [],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\JD",
+        "values": [
+          {
+            "value_name": "Lookup",
+            "value_kind": "Binary",
+            "value": "HqTDITP5"
+          }
+        ],
+        "sub_keys": [],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Kerberos",
+        "values": [],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Kerberos\\Domains",
+            "values": [],
+            "sub_keys": [],
+            "message": "Success"
+          },
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Kerberos\\HostToRealm",
+            "values": [],
+            "sub_keys": [],
+            "message": "Success"
+          },
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Kerberos\\Parameters",
+            "values": [],
+            "sub_keys": [],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0",
+        "values": [
+          {
+            "value_name": "Auth132",
+            "value_kind": "String",
+            "value": "IISSUBA"
+          },
+          {
+            "value_name": "NtlmMinClientSec",
+            "value_kind": "DWord",
+            "value": 536870912
+          },
+          {
+            "value_name": "NtlmMinServerSec",
+            "value_kind": "DWord",
+            "value": 536870912
+          }
+        ],
+        "sub_keys": [],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\OfflineLSA",
+        "values": [],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\OfflineLSA\\DBOptions",
+            "values": [],
+            "sub_keys": [],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\OfflineSAM",
+        "values": [],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\OfflineSAM\\DBOptions",
+            "values": [],
+            "sub_keys": [],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\OSConfig",
+        "values": [],
+        "sub_keys": [],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Skew1",
+        "values": [
+          {
+            "value_name": "SkewMatrix",
+            "value_kind": "Binary",
+            "value": "ahzOT9cspyBhsJkCdgJjbA=="
+          }
+        ],
+        "sub_keys": [],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\SSO",
+        "values": [],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\SSO\\Passport1.4",
+            "values": [
+              {
+                "value_name": "SSOURL",
+                "value_kind": "String",
+                "value": "http://www.passport.com"
+              }
+            ],
+            "sub_keys": [],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\SspiCache",
+        "values": [
+          {
+            "value_name": "Time",
+            "value_kind": "Binary",
+            "value": "Ed1rjquM2gE="
+          }
+        ],
+        "sub_keys": [
+          {
+            "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\SspiCache\\credssp.dll",
+            "values": [
+              {
+                "value_name": "Capabilities",
+                "value_kind": "DWord",
+                "value": 8455987
+              },
+              {
+                "value_name": "Comment",
+                "value_kind": "String",
+                "value": "Microsoft CredSSP Security Provider"
+              },
+              {
+                "value_name": "Name",
+                "value_kind": "String",
+                "value": "CREDSSP"
+              },
+              {
+                "value_name": "RpcId",
+                "value_kind": "DWord",
+                "value": 65535
+              },
+              {
+                "value_name": "Time",
+                "value_kind": "Binary",
+                "value": "L8le3KiM2gE="
+              },
+              {
+                "value_name": "TokenSize",
+                "value_kind": "DWord",
+                "value": 73032
+              },
+              {
+                "value_name": "Type",
+                "value_kind": "DWord",
+                "value": 33
+              },
+              {
+                "value_name": "Version",
+                "value_kind": "DWord",
+                "value": 1
+              }
+            ],
+            "sub_keys": [],
+            "message": "Success"
+          }
+        ],
+        "message": "Success"
+      },
+      {
+        "name": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Tracing",
+        "values": [],
+        "sub_keys": [],
+        "message": "Success"
+      }
+    ],
+    "message": "Success"
+  }
+]

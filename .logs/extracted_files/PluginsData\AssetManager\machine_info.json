@@ -1,0 +1,319 @@
+{
+  "host_name": "WX14556W173",
+  "dhcp_scope_name": "",
+  "fully_qualified_host_name": "WX14556W173",
+  "culture": "en-US",
+  "time_zone": "America/Los_Angeles",
+  "serial_number": "BN95H3KG21407",
+  "os_info": {
+    "os_platform": "Windows",
+    "os_version": "10.0.19045",
+    "os_architecture": "Amd64",
+    "os_release_name": "Microsoft Windows 10 Enterprise",
+    "os_type": "Workstation"
+  },
+  "computer_info": {
+    "manufacturer": "AZW",
+    "model": "MINI S"
+  },
+  "nics": [
+    {
+      "mac_address": "7C8334BC68A5",
+      "description": "Realtek PCIe GbE Family Controller",
+      "ips": [
+        "169.254.226.4"
+      ]
+    },
+    {
+      "mac_address": "286B35F45079",
+      "description": "Intel(R) Dual Band Wireless-AC 7265",
+      "ips": [
+        "192.168.30.76"
+      ]
+    }
+  ],
+  "drives": [
+    {
+      "name": "C:\\",
+      "volume_label": "",
+      "drive_format": "NTFS",
+      "total_size": 239208493056,
+      "freespace_available": 178728878080,
+      "freespace_total": 178728878080
+    }
+  ],
+  "memory": {
+    "total_physical": 8589934592,
+    "total_virtual": 10429095936,
+    "free_physical": 2017636352,
+    "free_virtual": 2191421440
+  },
+  "startups": [
+    {
+      "value": "explorer.exe",
+      "key": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+      "name": "Shell"
+    },
+    {
+      "key": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+      "name": "System"
+    },
+    {
+      "key": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+      "name": "Taskman"
+    },
+    {
+      "value": "C:\\Windows\\system32\\userinit.exe,",
+      "key": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon",
+      "name": "Userinit"
+    },
+    {
+      "value": "\"C:\\Program Files\\Classic Shell\\ClassicStartMenu.exe\" -autorun",
+      "key": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "Classic Start Menu"
+    },
+    {
+      "value": "C:\\Windows\\system32\\rundll32.exe C:\\Windows\\System32\\LogiLDA.dll,LogiFetch",
+      "key": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "Logitech Download Assistant"
+    },
+    {
+      "value": "\"C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\realtekservice.inf_amd64_5e041864a63a8eec\\RtkAudUService64.exe\" -background",
+      "key": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "RtkAudUService"
+    },
+    {
+      "value": "C:\\WINDOWS\\system32\\SecurityHealthSystray.exe",
+      "key": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "name": "SecurityHealth"
+    },
+    {
+      "value": "{E6FB5E20-DE35-11CF-9C87-00AA005127ED}",
+      "key": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ShellServiceObjectDelayLoad",
+      "name": "WebCheck"
+    },
+    {
+      "values": [
+        "msv1_0"
+      ],
+      "key": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa",
+      "name": "Authentication Packages"
+    },
+    {
+      "values": [
+        "scecli"
+      ],
+      "key": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa",
+      "name": "Notification Packages"
+    },
+    {
+      "values": [
+        "\"\""
+      ],
+      "key": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa",
+      "name": "Security Packages"
+    },
+    {
+      "value": "credssp.dll",
+      "key": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders",
+      "name": "SecurityProviders"
+    }
+  ],
+  "software_installed": [
+    {
+      "product": "Citrix Workspace 2311",
+      "version": "23.11.1.140",
+      "installed_date": "2023-12-13T08:00:00Z",
+      "vendor": "Citrix Systems, Inc."
+    },
+    {
+      "product": "Trellix Agent",
+      "version": "5.7.9.139",
+      "installed_date": "2023-11-30T08:00:00Z",
+      "vendor": "Trellix"
+    },
+    {
+      "product": "Microsoft Edge WebView2 Runtime",
+      "version": "124.0.2478.97",
+      "installed_date": "2024-05-11T07:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "NinjaRMMAgent",
+      "version": "5.8.9154",
+      "installed_date": "2023-10-26T07:00:00Z",
+      "vendor": "NinjaRMM LLC"
+    },
+    {
+      "product": "Microsoft Windows Desktop Runtime - 6.0.30 (x86)",
+      "version": "6.0.30.33617",
+      "installed_date": "2024-05-14T07:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "Microsoft Edge",
+      "version": "124.0.2478.97",
+      "installed_date": "2024-04-20T07:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.30.30704",
+      "version": "14.30.30704.0",
+      "installed_date": "2023-12-13T08:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.30.30704",
+      "version": "14.30.30704.0",
+      "installed_date": "2023-12-13T08:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161",
+      "version": "9.0.30729.6161",
+      "installed_date": "2022-08-20T07:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "Windows 10 Update Assistant",
+      "version": "1.4.19041.2183",
+      "installed_date": "2022-11-28T08:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "Realtek High Definition Audio Driver",
+      "version": "6.0.1.8335",
+      "installed_date": "2022-09-07T07:00:00Z",
+      "vendor": "Realtek Semiconductor Corp."
+    },
+    {
+      "product": "Microsoft OneDrive",
+      "version": "24.081.0421.0003",
+      "installed_date": "2024-05-11T07:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "Mozilla Firefox (x64 en-US)",
+      "version": "125.0.1",
+      "installed_date": "2022-08-25T07:00:00Z",
+      "vendor": "Mozilla"
+    },
+    {
+      "product": "Mozilla Maintenance Service",
+      "version": "125.0.1",
+      "installed_date": "2022-08-20T07:00:00Z",
+      "vendor": "Mozilla"
+    },
+    {
+      "product": "VLC media player",
+      "version": "3.0.20",
+      "installed_date": "2022-08-20T07:00:00Z",
+      "vendor": "VideoLAN"
+    },
+    {
+      "product": "7-Zip 23.01 (x64 edition)",
+      "version": "23.01.00.0",
+      "installed_date": "2023-11-11T08:00:00Z",
+      "vendor": "Igor Pavlov"
+    },
+    {
+      "product": "Microsoft Update Health Tools",
+      "version": "3.73.0.0",
+      "installed_date": "2023-10-26T07:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "LibreOffice 24.2.0.3",
+      "version": "24.2.0.3",
+      "installed_date": "2024-03-04T08:00:00Z",
+      "vendor": "The Document Foundation"
+    },
+    {
+      "product": "Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161",
+      "version": "9.0.30729.6161",
+      "installed_date": "2022-08-20T07:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "Update for Windows 10 for x64-based Systems (KB5001716)",
+      "version": "8.93.0.0",
+      "installed_date": "2023-10-26T07:00:00Z",
+      "vendor": "Microsoft Corporation"
+    },
+    {
+      "product": "Google Chrome",
+      "version": "124.0.6367.208",
+      "installed_date": "2024-05-14T07:00:00Z",
+      "vendor": "Google LLC"
+    },
+    {
+      "product": "Malwarebytes Endpoint Agent",
+      "version": "1.2.0.1122",
+      "installed_date": "2024-02-27T08:00:00Z",
+      "vendor": "Malwarebytes"
+    },
+    {
+      "product": "Adobe Acrobat (64-bit)",
+      "version": "24.001.20615",
+      "installed_date": "2024-03-21T07:00:00Z",
+      "vendor": "Adobe"
+    },
+    {
+      "product": "Classic Shell",
+      "version": "4.3.1",
+      "installed_date": "2022-09-07T07:00:00Z",
+      "vendor": "IvoSoft"
+    }
+  ],
+  "updates_installed": [
+    {
+      "installed_date": "2024-05-15T12:54:40Z",
+      "title": "2024-05 .NET 6.0.30 Security Update for x64 Client (KB5038350)"
+    },
+    {
+      "installed_date": "2024-04-19T14:12:35Z",
+      "title": "Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.409.377.0) - Current Channel (Broad)"
+    },
+    {
+      "installed_date": "2024-04-12T14:15:14Z",
+      "title": "2024-04 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5036892)"
+    },
+    {
+      "installed_date": "2024-04-12T14:07:13Z",
+      "title": "2024-04 Cumulative Update for .NET Framework 3.5, 4.8 and 4.8.1 for Windows 10 Version 22H2 for x64 (KB5037036)"
+    },
+    {
+      "installed_date": "2024-04-10T12:37:27Z",
+      "title": "2024-04 .NET 6.0.29 Security Update for x64 Client (KB5037336)"
+    },
+    {
+      "installed_date": "2024-03-27T10:52:35Z",
+      "title": "Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.407.734.0) - Current Channel (Broad)"
+    },
+    {
+      "installed_date": "2024-03-27T10:52:35Z",
+      "title": "Update for Microsoft Defender Antivirus antimalware platform - KB4052623 (Version 4.18.24020.7) - Current Channel (Broad)"
+    },
+    {
+      "installed_date": "2024-03-15T14:35:34Z",
+      "title": "Security Intelligence Update for Microsoft Defender Antivirus - KB2267602 (Version 1.407.438.0) - Current Channel (Broad)"
+    },
+    {
+      "installed_date": "2024-03-15T14:16:38Z",
+      "title": "2024-03 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5035845)"
+    },
+    {
+      "installed_date": "2024-03-15T14:07:10Z",
+      "title": "2024-03 .NET 6.0.28 Update for x64 Client (KB5036450)"
+    },
+    {
+      "installed_date": "2024-03-01T16:20:16Z",
+      "title": "2024-02 Cumulative Update for Windows 10 Version 22H2 for x64-based Systems (KB5034763)"
+    },
+    {
+      "installed_date": "2024-03-01T16:10:43Z",
+      "title": "2024-02 Cumulative Update for .NET Framework 3.5, 4.8 and 4.8.1 for Windows 10 Version 22H2 for x64 (KB5034685)"
+    }
+  ],
+  "plugin_version": "1.2.0.720"
+}

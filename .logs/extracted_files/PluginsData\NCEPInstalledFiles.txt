@@ -1,0 +1,39 @@
+7z.dll	21.06
+Actions.dll	3.3.0.306
+ActionsShim.dll	3.3.0.295
+AEControllerImpl.dll	3.1.0.380
+ArwControllerImpl.dll	3.1.0.546
+arwlib.dll	3.1.0.1057
+BrowserSDKDLL.dll	3.3.0.234
+BrowserSDKDLLShim.dll	3.3.0.204
+CleanControllerImpl.dll	3.3.0.811
+CloudControllerImpl.dll	3.3.0.356
+expapply64.dll	9, 5, 3, 0
+LicenseControllerImpl.dll	3.3.0.526
+mbae-api-na.dll	1.13.4.585
+mbae.dll	1.13.4.585
+mbae64.dll	1.13.4.585
+MBAMCore.dll	3.1.0.27
+MBAMShim.dll	3.0.0.1405
+mbamsi32.dll	1.0.0.25
+mbamsi64.dll	1.0.0.25
+mbamsisdk.dll	1.1.1.126
+mbcut.dll	3.2.0.1216
+MWACControllerImpl.dll	3.1.0.667
+MwacLib.dll	1.0.0.286
+offreg.dll	10.0.19041.1 (WinBuild.160101.0800)
+PoliciesControllerImpl.dll	3.3.0.274
+rtp.dll	3.1.0.410
+RTPControllerImpl.dll	3.2.0.976
+sample.dll	
+ScanControllerImpl.dll	3.2.0.1546
+SdkDbUpdatrV5.dll	1.2.0.152
+SelfProtectionSdk.dll	3.1.0.605
+SelfProtectionShim.dll	3.1.0.605
+sentrynativesdk.dll	1.2.0.42
+SPControllerImpl.dll	3.1.0.304
+Swissarmy.dll	4.3.0.341
+SwissarmyShim.dll	4.3.0.341
+TelemetryControllerImpl.dll	3.3.0.479
+UpdateControllerImpl.dll	3.2.0.662
+MBAMIService.exe	4.0.0.559

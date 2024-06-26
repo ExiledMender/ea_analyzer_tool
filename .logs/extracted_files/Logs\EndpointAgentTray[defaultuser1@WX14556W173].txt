@@ -1,0 +1,12 @@
+2024-05-09 04:04:26,321-07:00 (4328 ) [1 ] INFO  EATray Command line args have been evaluated and logger has been initialized No command line arguments supplied
+
+2024-05-09 04:04:26,352-07:00 (4328 ) [1 ] INFO  EATray **************  EATray Initializing! Version:1.2.0.488 PID:4328 ***************
+2024-05-09 04:04:26,352-07:00 (4328 ) [1 ] INFO  EATray Checking to see if another instance of [EATray] process is already running in this session id:3.
+2024-05-09 04:04:26,352-07:00 (4328 ) [1 ] INFO  EATray This is the ONLY instance of  [EATray] process running in this session id:3.
+2024-05-09 04:04:26,509-07:00 (4328 ) [5 ] INFO  TrayPipeConnector Connector Started.
+2024-05-09 04:04:26,571-07:00 (4328 ) [6 ] INFO  ShutdownMonitor Monitor -- Activate EventHandle Global\EventMalwarebytesMBCoudEAEAUserAgentArmKillSwitch3S-1-5-21-1101495022-937835979-3676710772-1015 exists.
+2024-05-09 04:04:26,571-07:00 (4328 ) [6 ] INFO  ShutdownMonitor Monitor -- Activate  Global\EventMalwarebytesMBCoudEAEAUserAgentTriggerKillSwitch3S-1-5-21-1101495022-937835979-3676710772-1015 Shutdown Monitoring
+2024-05-09 04:04:26,571-07:00 (4328 ) [6 ] INFO  ShutdownMonitor Monitor -- Trigger EventHandle Global\EventMalwarebytesMBCoudEAEAUserAgentTriggerKillSwitch3S-1-5-21-1101495022-937835979-3676710772-1015 exists.
+2024-05-09 13:19:22,261-07:00 (4328 ) [1 ] INFO  ShutdownMonitor Monitor -- Cancelling ShutdownMonitor
+2024-05-09 13:19:22,261-07:00 (4328 ) [1 ] INFO  TrayPipeConnector Cancelling Connector
+2024-05-09 13:19:22,261-07:00 (4328 ) [5 ] INFO  TrayPipeConnector Connector terminating

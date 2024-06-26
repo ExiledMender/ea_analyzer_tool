@@ -34,7 +34,7 @@ def generate_html_from_json(info_json_path, html_path):
     os_architecture = agent_info.get('os_info', {}).get('os_architecture', 'N/A')
 
     try:
-        with open(os.path.join('logs', 'PluginsData', 'AssetManager', 'machine_info.json'), 'r', encoding='utf-8') as machine_file:
+        with open(os.path.join('logs', 'machine_info.json'), 'r', encoding='utf-8') as machine_file:
             machine_info = json.load(machine_file)
     except FileNotFoundError:
         print("Error: File 'machine_info.json' not found.")
