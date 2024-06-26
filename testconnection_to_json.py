@@ -1,4 +1,3 @@
-# testconnection_to_json.py
 import json
 import re
 
@@ -7,11 +6,10 @@ def convert_test_connection_to_json(test_connection_path, test_connection_output
         with open(test_connection_path, 'r') as connection_file:
             connection_data = connection_file.read()
         
-
         pattern = re.compile(r'\{[^\}]*?\}', re.DOTALL)
         blocks = pattern.findall(connection_data)
         
-        test_values = []
+        test_values = {}
         for block in blocks:
             try:
                 data = json.loads(block)
@@ -24,14 +22,14 @@ def convert_test_connection_to_json(test_connection_path, test_connection_output
                         "Result": data["Result"],
                         "Headers": data["Headers"]
                     }
-                    test_values.append(formatted_output)  # Collect all valid blocks
+                    test_values[data["UriTested"]] = formatted_output  # Use UriTested as the key
             except json.JSONDecodeError as e:
                 print(f"Error reading file {test_connection_path}: {e}")
 
         with open(test_connection_output, 'w') as outfile:
             json.dump(test_values, outfile, indent=4)
         
-        return test_values  # Return the list of formatted outputs
+        return test_values  # Return the dictionary of formatted outputs
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
