@@ -2,79 +2,45 @@ import json
 import os
 
 def bytes_to_gb(bytes_value):
-    gb_value = bytes_value / (1024 ** 3)
-    return gb_value
+    return bytes_value / (1024 ** 3)
 
-def generate_html_from_json(info_json_path, html_path):
+def load_json(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"Error: File '{file_path}' not found.")
+    except Exception as e:
+        print(f"Error reading '{file_path}': {e}")
+    return {}
+
+def create_html_directory(html_path):
     html_dir = os.path.dirname(html_path)
     if html_dir:
         os.makedirs(html_dir, exist_ok=True)
-    
-    try:
-        with open(info_json_path, 'r', encoding='utf-8') as file:
-            data = json.load(file)
-    except FileNotFoundError:
-        print(f"Error: File '{info_json_path}' not found.")
-        return
-    except Exception as e:
-        print(f"Error reading '{info_json_path}': {e}")
-        return
-    
-    agent_info = data.get('AgentInfo', {})
-    account_token = data.get('AccountToken', 'N/A')
-    nebula_machine_id = data.get('NebulaMachineId', 'N/A')
-    host_name = agent_info.get('host_name', 'N/A')
-    fully_qualified_host_name = agent_info.get('fully_qualified_host_name', 'N/A')
-    last_user = agent_info.get('last_user', 'N/A')
-    engine_version = agent_info.get('engine_version', 'N/A')
+    return html_dir
 
-    os_version = agent_info.get('os_info', {}).get('os_version', 'N/A')
-    os_release_name = agent_info.get('os_info', {}).get('os_release_name', 'N/A')
-    os_type = agent_info.get('os_info', {}).get('os_type', 'N/A')
-    os_architecture = agent_info.get('os_info', {}).get('os_architecture', 'N/A')
-
-    try:
-        with open(os.path.join('logs', 'machine_info.json'), 'r', encoding='utf-8') as machine_file:
-            machine_info = json.load(machine_file)
-    except FileNotFoundError:
-        print("Error: File 'machine_info.json' not found.")
-        machine_info = {}
-
-    drives_info = machine_info.get('drives', [])
-
+def get_drive_info(drives):
     storage_info_html = ''
-    for drive in drives_info:
-        drive_name = drive.get('name', 'N/A')
-        volume_label = drive.get('volume_label', 'N/A')
-        drive_format = drive.get('drive_format', 'N/A')
-        total_size_bytes = drive.get('total_size', 0)
-        freespace_available_bytes = drive.get('freespace_available', 0)
-        freespace_total_bytes = drive.get('freespace_total', 0)
-
-        total_size_gb = bytes_to_gb(total_size_bytes)
-        freespace_available_gb = bytes_to_gb(freespace_available_bytes)
-        freespace_total_gb = bytes_to_gb(freespace_total_bytes)
-
+    for drive in drives:
+        total_size_gb = bytes_to_gb(drive.get('total_size', 0))
+        freespace_available_gb = bytes_to_gb(drive.get('freespace_available', 0))
         storage_used_gb = total_size_gb - freespace_available_gb
-        if total_size_gb > 0:
-            storage_used_percentage = (storage_used_gb / total_size_gb) * 100
-        else:
-            storage_used_percentage = 0
-
+        storage_used_percentage = (storage_used_gb / total_size_gb) * 100 if total_size_gb > 0 else 0
         storage_percentage_display = f"{storage_used_percentage:.2f}%"
 
         storage_info_html += f"""
         <div class="info-item">
             <label>Drive name:</label>
-            <span>{drive_name}</span>
+            <span>{drive.get('name', 'N/A')}</span>
         </div>
         <div class="info-item">
             <label>Volume label:</label>
-            <span>{volume_label}</span>
+            <span>{drive.get('volume_label', 'N/A')}</span>
         </div>
         <div class="info-item">
             <label>Drive format:</label>
-            <span>{drive_format}</span>
+            <span>{drive.get('drive_format', 'N/A')}</span>
         </div>
         <div class="info-item">
             <label>Storage:</label>
@@ -85,62 +51,64 @@ def generate_html_from_json(info_json_path, html_path):
             <br>
         </div>
         """
+    return storage_info_html
 
-    plugins = agent_info.get('plugins', [])
+def get_protection_info(plugins):
     protection_status = next((p.get('protection_status', {}) for p in plugins if p.get('product_name') == 'Endpoint Protection'), {})
-    rtp = protection_status.get('rtp', 'N/A')
-    ae = protection_status.get('ae', 'N/A')
-    arw = protection_status.get('arw', 'N/A')
-    mwac = protection_status.get('mwac', 'N/A')
-    sp = protection_status.get('sp', 'N/A')
-
-    endpoint_protection = next((p.get('plugin_version', 'N/A') for p in plugins if p.get('product_name') == 'Endpoint Protection'), 'N/A')
-    protection_update = next((p.get('update_package_version', 'N/A') for p in plugins if p.get('product_name') == 'Endpoint Protection'), 'N/A')
-    protection_service = next((p.get('sdk_version', 'N/A') for p in plugins if p.get('product_name') == 'Endpoint Protection'), 'N/A')
-    component_package = next((p.get('component_package_version', 'N/A') for p in plugins if p.get('product_name') == 'Endpoint Protection'), 'N/A')
-    active_response_shell = next((p.get('plugin_version', 'N/A') for p in plugins if p.get('product_name') == 'Active Response Shell'), 'N/A')
-    brute_force_protection = next((p.get('plugin_version', 'N/A') for p in plugins if p.get('product_name') == 'Windows Remote Intrusion Detection and Prevention'), 'N/A')
-    asset_manager = next((p.get('plugin_version', 'N/A') for p in plugins if p.get('product_name') == 'Asset Manager'), 'N/A')
-    edr = next((p.get('plugin_version', 'N/A') for p in plugins if p.get('product_name') == 'Endpoint Detection and Response'), 'N/A')
-
-    rtp_display = rtp.capitalize()
-    ae_display = ae.capitalize()
-    arw_display = arw.capitalize()
-    mwac_display = mwac.capitalize()
-    sp_display = sp.capitalize()
-
     def get_indicator_symbol(status):
-        return '✔' if status == 'started' else '✖'
+        return "✔" if status == "started" else "✖"
 
-    rtp_indicator_symbol = get_indicator_symbol(rtp)
-    ae_indicator_symbol = get_indicator_symbol(ae)
-    arw_indicator_symbol = get_indicator_symbol(arw)
-    mwac_indicator_symbol = get_indicator_symbol(mwac)
-    sp_indicator_symbol = get_indicator_symbol(sp)
+    protection_data = {
+        'Malware Protection': protection_status.get('rtp', 'N/A'),
+        'Exploit Protection': protection_status.get('ae', 'N/A'),
+        'Behavior Protection': protection_status.get('arw', 'N/A'),
+        'Web Protection': protection_status.get('mwac', 'N/A'),
+        'Self Protection': protection_status.get('sp', 'N/A'),
+    }
+    protection_info_html = ""
+    for key, value in protection_data.items():
+        display_value = value.capitalize()
+        indicator_symbol = get_indicator_symbol(value)
+        protection_info_html += f"""
+        <div class="info-item">
+            <label>{key.title().replace('_', ' ')}:</label>
+            <span class="indicator">{indicator_symbol}</span><span>{display_value}</span>
+        </div>
+        """
+    return protection_info_html
 
-    def connection_indicator_symbol(status):
-        return '✔' if status == 'Passed' else '✖'
+def get_plugin_versions(plugins):
+    plugin_version_map = {
+        'Endpoint Protection': 'endpoint_protection',
+        'Active Response Shell': 'active_response_shell',
+        'Windows Remote Intrusion Detection and Prevention': 'brute_force_protection',
+        'Asset Manager': 'asset_manager',
+        'Endpoint Detection and Response': 'edr',
+    }
 
-    try:
-        with open(os.path.join('logs', 'Analyzer', 'TestConnections.json'), 'r', encoding='utf-8') as connection_file:
-            connection_data = json.load(connection_file)
-    except FileNotFoundError:
-        print("Error: File 'TestConnections.json' not found.")
-        connection_data = {}
+    plugin_info = {key: next((p.get('plugin_version', 'N/A') for p in plugins if p.get('product_name') == key), 'N/A') for key in plugin_version_map}
+    return plugin_info
 
+def get_connection_results(connection_data):
     connection_results_html = ''
+    def connection_indicator_symbol(status):
+        return "✔" if status == "Passed" else "✖"
+
     for url, details in connection_data.items():
-        status = "Passed" if details.get('Result', False) else "Failed"
+        status = "Passed" if details.get("Result", False) else "Failed"
         symbol = connection_indicator_symbol(status)
         connection_results_html += f'<div class="info-item-connection"><label>{url}</label><span class="indicator">{symbol}</span><span>{status}</span></div>\n'
+    return connection_results_html
 
-    html_content = f"""
+def generate_html_content(data, storage_info_html, protection_info_html, plugin_versions, connection_results_html):
+    agent_info = data.get('AgentInfo', {})
+    return f"""
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{host_name} Results</title>
+        <title>{agent_info.get('host_name', 'N/A')} Results</title>
         <style>
             body {{
                 font-family: Consolas, monospace;
@@ -157,12 +125,12 @@ def generate_html_from_json(info_json_path, html_path):
             }}
             .info-item label {{
                 display: inline-block;
-                width: 325px; /* Increased width */
+                width: 325px;
                 font-weight: bold;
             }}
             .info-item-connection label {{
                 display: inline-block;
-                width: 670px; /* Increased width */
+                width: 670px;
                 font-weight: bold;
                 margin-bottom: 10px
             }}
@@ -192,176 +160,144 @@ def generate_html_from_json(info_json_path, html_path):
                 width: 100%;
             }}
             .grey-background {{
-                color: #808080; /* Light grey background */
+                color: #808080;
                 padding: 10px;
                 margin-top: 20px;
             }}
             .grey-background a {{
-                color: #808080; /* Darker text color for links */
-                text-decoration: none; /* Remove underline */
-                font-weight: bold; /* Make the link text bold */
+                color: #808080;
+                text-decoration: none;
+                font-weight: bold;
             }}
             .grey-background a:hover {{
-                text-decoration: underline; /* Underline on hover */
+                text-decoration: underline;
             }}
             .storage-bar-container {{
                 width: 90%;
-                height: 10px; /* Adjust height as needed */
-                background-color: #f0f0f0; /* Background color of the bar */
-                border-radius: 5px; /* Rounded corners */
+                height: 10px;
+                background-color: #f0f0f0;
+                border-radius: 5px;
                 margin-top: 5px;
-                overflow: hidden; /* Ensure the bar doesn't overflow its container */
+                overflow: hidden;
             }}
-
             .storage-bar {{
                 height: 100%;
-                background-color: #4caf50; /* Color of the progress */
+                background-color: #4caf50;
             }}
         </style>
     </head>
     <body>
-        
         <h1>Endpoint Agent Analyzer Results</h1>
-
         <div class="info-item">
             <label>Account Token:</label>
-            <span>{account_token}</span>
+            <span>{data.get('AccountToken', 'N/A')}</span>
         </div>
         <div class="info-item">
             <label>Nebula Machine ID:</label>
-            <span>{nebula_machine_id}</span>
+            <span>{data.get('NebulaMachineId', 'N/A')}</span>
         </div>
         <hr>
-        
         <div class="left-column">
             <h3>General Information</h3>
             <div class="info-item">
                 <label>Endpoint Name:</label>
-                <span>{host_name}</span>
+                <span>{agent_info.get('host_name', 'N/A')}</span>
             </div>
             <div class="info-item">
                 <label>FQDN:</label>
-                <span>{fully_qualified_host_name}</span>
+                <span>{agent_info.get('fully_qualified_host_name', 'N/A')}</span>
             </div>
             <div class="info-item">
                 <label>Last User:</label>
-                <span>{last_user}</span>
+                <span>{agent_info.get('last_user', 'N/A')}</span>
             </div>
-
             <h3>Operating System</h3>
             <div class="info-item">
                 <label>OS Version:</label>
-                <span>{os_version}</span>
+                <span>{agent_info.get('os_info', {}).get('os_version', 'N/A')}</span>
             </div>
             <div class="info-item">
                 <label>OS Friendly Name:</label>
-                <span>{os_release_name}</span>
+                <span>{agent_info.get('os_info', {}).get('os_release_name', 'N/A')}</span>
             </div>
             <div class="info-item">
                 <label>OS Type:</label>
-                <span>{os_type}</span>
+                <span>{agent_info.get('os_info', {}).get('os_type', 'N/A')}</span>
             </div>
             <div class="info-item">
                 <label>OS Architecture:</label>
-                <span>{os_architecture}</span>
+                <span>{agent_info.get('os_info', {}).get('os_architecture', 'N/A')}</span>
             </div>
-            
-            <div class="info-item">
-                <h3>Storage Information:</h3>
-            </div>
+            <h3>Storage Information:</h3>
             {storage_info_html}
         </div>
-
         <div class="right-column">
             <h3>Protection Status</h3>
-            <div class="info-item">
-                <label>Web Protection:</label>
-                <span class="indicator">{mwac_indicator_symbol}</span><span>{mwac_display}</span>
-            </div>
-            <div class="info-item">
-                <label>Malware Protection:</label>
-                <span class="indicator">{rtp_indicator_symbol}</span><span>{rtp_display}</span>
-            </div>
-            <div class="info-item">
-                <label>Exploit Protection:</label>
-                <span class="indicator">{ae_indicator_symbol}</span><span>{ae_display}</span>
-            </div>
-            <div class="info-item">
-                <label>Behavior Protection:</label>
-                <span class="indicator">{arw_indicator_symbol}</span><span>{arw_display}</span>
-            </div>
-            <div class="info-item">
-                <label>Self Protection:</label>
-                <span class="indicator">{sp_indicator_symbol}</span><span>{sp_display}</span>
-            </div>
-
+            {protection_info_html}
             <h3>Agent and Plugins</h3>
             <div class="info-item">
                 <label>Endpoint Agent:</label>
-                <span>{engine_version}</span>
+                <span>{agent_info.get('engine_version', 'N/A')}</span>
             </div>
             <div class="info-item">
                 <label>Endpoint Protection:</label>
-                <span>{endpoint_protection}</span>
+                <span>{plugin_versions['Endpoint Protection']}</span>
             </div>
-            <div class="info-item">
-                <label>Protection Update:</label>
-                <span>{protection_update}</span>
-            </div>
-            <div class="info-item">
-                <label>Protection Service:</label>
-                <span>{protection_service}</span>
-            </div>
-            <div class="info-item">
-                <label>Component Package:</label>
-                <span>{component_package}</span>
-            </div>
-            <br>
             <div class="info-item">
                 <label>Active Response Shell:</label>
-                <span>{active_response_shell}</span>
+                <span>{plugin_versions['Active Response Shell']}</span>
             </div>
-            <br>
             <div class="info-item">
                 <label>Brute Force Protection:</label>
-                <span>{brute_force_protection}</span>
+                <span>{plugin_versions['Windows Remote Intrusion Detection and Prevention']}</span>
             </div>
-            <br>
             <div class="info-item">
                 <label>Asset Manager:</label>
-                <span>{asset_manager}</span>
+                <span>{plugin_versions['Asset Manager']}</span>
             </div>
-            <br>
             <div class="info-item">
                 <label>Endpoint Detection and Response:</label>
-                <span>{edr}</span>
+                <span>{plugin_versions['Endpoint Detection and Response']}</span>
             </div>
         </div>
-
         <div class="full-width">
             <hr>
             <h3>Connection Test Results</h3>
             {connection_results_html}
         </div>
-
         <div class="full-width grey-background">
             * If one of the above failed, ask the customer to review:
             <a href="https://support.threatdown.com/hc/en-us/articles/4413798711699-Network-access-requirements-for-Nebula">Network access requirements for Nebula</a>
         </div>
-    
     </body>
     </html>
     """
+
+def generate_html_from_json(info_json_path, html_path):
+    html_dir = create_html_directory(html_path)
+    data = load_json(info_json_path)
     
-    filename = f"{host_name}_Analyzer_Results.html"
+    machine_info = load_json(os.path.join('temp', 'machine_info.json'))
+    drives_info = machine_info.get('drives', [])
+    storage_info_html = get_drive_info(drives_info)
+    
+    plugins = data.get('AgentInfo', {}).get('plugins', [])
+    protection_info_html = get_protection_info(plugins)
+    plugin_versions = get_plugin_versions(plugins)
+    
+    connection_data = load_json(os.path.join("temp", "json", "TestConnections.json"))
+    connection_results_html = get_connection_results(connection_data)
+    
+    html_content = generate_html_content(data, storage_info_html, protection_info_html, plugin_versions, connection_results_html)
+    
+    filename = f"{data.get('AgentInfo', {}).get('host_name', 'Analyzer_Results')}_Analyzer_Results.html"
     html_path_with_name = os.path.join(html_dir, filename)
 
     try:
         with open(html_path_with_name, 'w', encoding='utf-8') as file:
             file.write(html_content)
-        print(f"HTML file '{filename}' generated successfully.")
     except Exception as e:
         print(f"Error writing '{html_path_with_name}': {e}")
 
 if __name__ == "__main__":
-    generate_html_from_json(os.path.join('logs', 'Analyzer', 'Info.json'), os.path.join('logs', 'Analyzer', '{host_name}_Analyzer_Results.html'))
+    generate_html_from_json(os.path.join("temp", "json", "Info.json"), os.path.join("results", "{host_name}_Analyzer_Results.html"))
