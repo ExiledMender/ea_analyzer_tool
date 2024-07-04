@@ -1,4 +1,4 @@
 .logs/*
-logs/*
+temp/*
 .DS_store
 __pycache__/
