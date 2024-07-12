@@ -1,6 +1,19 @@
 import json
 import os
 
+from datetime import datetime
+
+script_version = "v.0.5.6"
+
+def get_run_timestamp():
+    # Get the current date and time
+    now = datetime.now()
+    
+    # Format the date and time as a string in the desired format
+    timestamp = now.strftime("%I:%M %p, %d/%m/%Y")
+    
+    return timestamp
+
 def bytes_to_gb(bytes_value):
     return bytes_value / (1024 ** 3)
 
@@ -20,62 +33,11 @@ def create_html_directory(html_path):
         os.makedirs(html_dir, exist_ok=True)
     return html_dir
 
-def get_drive_info(drives):
-    storage_info_html = ''
-    for drive in drives:
-        total_size_gb = bytes_to_gb(drive.get('total_size', 0))
-        freespace_available_gb = bytes_to_gb(drive.get('freespace_available', 0))
-        storage_used_gb = total_size_gb - freespace_available_gb
-        storage_used_percentage = (storage_used_gb / total_size_gb) * 100 if total_size_gb > 0 else 0
-        storage_percentage_display = f"{storage_used_percentage:.2f}%"
-
-        storage_info_html += f"""
-        <div class="info-item">
-            <label>Drive name:</label>
-            <span>{drive.get('name', 'N/A')}</span>
-        </div>
-        <div class="info-item">
-            <label>Volume label:</label>
-            <span>{drive.get('volume_label', 'N/A')}</span>
-        </div>
-        <div class="info-item">
-            <label>Drive format:</label>
-            <span>{drive.get('drive_format', 'N/A')}</span>
-        </div>
-        <div class="info-item">
-            <label>Storage:</label>
-            <span>{storage_used_gb:.2f} GB of {total_size_gb:.2f} GB used ({storage_percentage_display})</span>
-            <div class="storage-bar-container">
-                <div class="storage-bar" style="width: {storage_used_percentage}%;"></div>
-            </div>
-            <br>
-        </div>
-        """
-    return storage_info_html
-
-def get_protection_info(plugins):
-    protection_status = next((p.get('protection_status', {}) for p in plugins if p.get('product_name') == 'Endpoint Protection'), {})
-    def get_indicator_symbol(status):
-        return "✔" if status == "started" else "✖"
-
-    protection_data = {
-        'Malware Protection': protection_status.get('rtp', 'N/A'),
-        'Exploit Protection': protection_status.get('ae', 'N/A'),
-        'Behavior Protection': protection_status.get('arw', 'N/A'),
-        'Web Protection': protection_status.get('mwac', 'N/A'),
-        'Self Protection': protection_status.get('sp', 'N/A'),
-    }
-    protection_info_html = ""
-    for key, value in protection_data.items():
-        display_value = value.capitalize()
-        indicator_symbol = get_indicator_symbol(value)
-        protection_info_html += f"""
-        <div class="info-item">
-            <label>{key.title().replace('_', ' ')}:</label>
-            <span class="indicator">{indicator_symbol}</span><span>{display_value}</span>
-        </div>
-        """
-    return protection_info_html
+def trim_version(version):
+    parts = version.split('.')
+    if len(parts) >= 4:
+        return f"{parts[0]}.{parts[1]}.{parts[3]}"
+    return version  # Return original version if format is unexpected
 
 def get_plugin_versions(plugins):
     plugin_version_map = {
@@ -86,22 +48,129 @@ def get_plugin_versions(plugins):
         'Endpoint Detection and Response': 'edr',
     }
 
-    plugin_info = {key: next((p.get('plugin_version', 'N/A') for p in plugins if p.get('product_name') == key), 'N/A') for key in plugin_version_map}
+    plugin_info = {key: trim_version(next((p.get('plugin_version', 'N/A') for p in plugins if p.get('product_name') == key), 'N/A')) for key in plugin_version_map}
     return plugin_info
 
+def get_services(state):
+    services_state_map = {
+        'Malwarebytes Endpoint Agent Monitor': 'ea_monitor',
+        'Malwarebytes Service': 'mbam_service',
+        'Malwarebytes Endpoint Agent': 'ea_service',
+        'ThreatDown Endpoint Agent': 'ea_service'
+    }
+
+    service_info = {
+        'ea_monitor': 'N/A',
+        'mbam_service': 'N/A',
+        'ea_service': 'N/A'
+    }
+
+    for s in state:
+        caption = s.get('Caption', '')
+        state_value = s.get('State', 'N/A')
+        if caption in services_state_map:
+            internal_name = services_state_map[caption]
+            # Only update if the current value is 'N/A'
+            if service_info[internal_name] == 'N/A':
+                service_info[internal_name] = state_value
+
+    return service_info
+
+def get_drive_info(drives):
+    storage_info_html = '''
+    
+    <table class="storage_info">
+        <tr>
+            <th>Drive Name</th>
+            <th>Volume Label</th>
+            <th>Drive Format</th>
+            <th style="text-align: right;">Used Storage (GB)</th>
+            <th style="text-align: right;">Total Storage (GB)</th>
+            <th style="text-align: right;">Free Space Available (GB)</th>
+            <th style="text-align: right;">Percentage Used</th>
+        </tr>
+        <hr>
+        <h2 style="margin-bottom: -5px;">Storage Information</h2>
+    '''
+    for idx, drive in enumerate(drives):
+        total_size_gb = bytes_to_gb(drive.get('total_size', 0))
+        freespace_available_gb = bytes_to_gb(drive.get('freespace_available', 0))
+        storage_used_gb = total_size_gb - freespace_available_gb
+        storage_used_percentage = (storage_used_gb / total_size_gb) * 100 if total_size_gb > 0 else 0
+        storage_percentage_display = f"{storage_used_percentage:.2f}%"
+
+        storage_info_html += f"""
+        <tr style="background-color: {'#d9d9d9' if idx % 2 == 0 else '#ffffff'};">
+            <td>{drive.get('name', 'N/A')}</td>
+            <td>{drive.get('volume_label', 'N/A')}</td>
+            <td>{drive.get('drive_format', 'N/A')}</td>
+            <td style="text-align: right;">{storage_used_gb:.2f}</td>
+            <td style="text-align: right;">{total_size_gb:.2f}</td>
+            <td style="text-align: right;">{freespace_available_gb:.2f}</td>
+            <td style="text-align: right;">{storage_percentage_display}</td>
+        </tr>
+        """
+    storage_info_html += '</table>'
+    return storage_info_html
+
 def get_connection_results(connection_data):
-    connection_results_html = ''
+    connection_results_html = '''
+    <table class="connection_results">
+        <tr>
+            <th>URL</th>
+            <th>Status</th>
+        </tr>
+        <hr>
+        <h2 style="margin-bottom: -5px;">Test Connection Results</h2>
+    '''
     def connection_indicator_symbol(status):
         return "✔" if status == "Passed" else "✖"
 
-    for url, details in connection_data.items():
+    for idx, (url, details) in enumerate(connection_data.items()):
         status = "Passed" if details.get("Result", False) else "Failed"
         symbol = connection_indicator_symbol(status)
-        connection_results_html += f'<div class="info-item-connection"><label>{url}</label><span class="indicator">{symbol}</span><span>{status}</span></div>\n'
+        status_class = "status-passed" if status == "Passed" else "status-failed"
+        connection_results_html += f'''
+        <tr style="background-color: {'#d9d9d9' if idx % 2 == 0 else '#ffffff'};">
+            <td>{url}</td>
+            <td class="{status_class}">{symbol} {status}</td>
+        </tr>
+        '''
+    connection_results_html += '</table>'
     return connection_results_html
 
-def generate_html_content(data, storage_info_html, protection_info_html, plugin_versions, connection_results_html):
+def format_system_uptime(uptime):
+    parts = uptime.split('.')
+    days = parts[0]
+    time_str = parts[1]
+    hours, minutes, seconds = time_str.split(':')
+    return f"{days}d {hours}h {minutes}min {int(float(seconds))}s"
+
+def format_status(status):
+    if status.lower() in ['started', 'running']:
+        return f'<span style="color: green;">✔ {status.title()}</span>'
+    elif status.lower() == 'n/a':
+        return f'<span style="color: black;">— {status.title()}</span>'
+    else:
+        return f'<span style="color: red;">✖ {status.title()}</span>'
+
+def format_services(service_info):
+    formatted_services = {}
+    for service, status in service_info.items():
+        formatted_services[service] = format_status(status)
+    return formatted_services
+
+def generate_html_content(data, storage_info_html, plugin_versions, connection_results_html, system_uptime, services_info):
     agent_info = data.get('AgentInfo', {})
+
+    protection_statuses = {}
+    for plugin in agent_info.get('plugins', []):
+        if plugin.get('product_name') == 'Endpoint Protection':
+            protection_statuses = plugin.get('protection_status', {})
+            break
+
+    formatted_services = format_services(services_info)
+
     return f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -125,13 +194,11 @@ def generate_html_content(data, storage_info_html, protection_info_html, plugin_
             }}
             .info-item label {{
                 display: inline-block;
-                width: 325px;
-                font-weight: bold;
+                width: 50%;
             }}
             .info-item-connection label {{
                 display: inline-block;
                 width: 670px;
-                font-weight: bold;
                 margin-bottom: 10px
             }}
             .indicator {{
@@ -147,18 +214,6 @@ def generate_html_content(data, storage_info_html, protection_info_html, plugin_
             .indicator-stopped {{
                 background-color: red;
             }}
-            .left-column {{
-                float: left;
-                width: 50%;
-            }}
-            .right-column {{
-                float: right;
-                width: 50%;
-            }}
-            .full-width {{
-                clear: both;
-                width: 100%;
-            }}
             .grey-background {{
                 color: #808080;
                 padding: 10px;
@@ -172,97 +227,217 @@ def generate_html_content(data, storage_info_html, protection_info_html, plugin_
             .grey-background a:hover {{
                 text-decoration: underline;
             }}
-            .storage-bar-container {{
-                width: 90%;
-                height: 10px;
-                background-color: #f0f0f0;
-                border-radius: 5px;
-                margin-top: 5px;
-                overflow: hidden;
+
+            table {{
+                border-collapse: collapse;
+                width: 100%;
+                table-layout:fixed;
             }}
-            .storage-bar {{
-                height: 100%;
-                background-color: #4caf50;
+
+            td, th {{
+                border: 0px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+                font-weight: normal;
+            }}
+
+            .data_table tr:nth-child(even), .storage_info tr:nth-child(even), .connection_results tr:nth-child(even) {{
+                background-color: #d9d9d9;
+            }}
+
+            td:nth-child(1), td:nth-child(3), th:nth-child(1), th:nth-child(3) {{
+                font-weight: bold;
+            }}
+
+            td.table_category, th.table_category {{
+                font-weight: bold;
+                font-size: 150%;
+            }}
+
+            /* Specific styles for storage information and test connection tables */
+            .storage_info th, .connection_results th {{
+                font-weight: bold;
+            }}
+
+            .storage_info td, .connection_results td {{
+                font-weight: normal;
+            }}
+
+            .connection_results .status-passed {{
+                color: green;
+            }}
+
+            .connection_results .status-failed {{
+                color: red;
             }}
         </style>
     </head>
     <body>
         <h1>Endpoint Agent Analyzer Results</h1>
         <div class="info-item">
-            <label>Account Token:</label>
-            <span>{data.get('AccountToken', 'N/A')}</span>
+            <label><span style="font-weight: bold;">Script Version:</span> {script_version} | <span style="font-weight: bold;">Script RunTime:</span> {get_run_timestamp()}</label>
         </div>
-        <div class="info-item">
-            <label>Nebula Machine ID:</label>
-            <span>{data.get('NebulaMachineId', 'N/A')}</span>
+        <br>
+        
+        <!-- Account Token and Nebula Machine ID Information -->
+        <table>
+        <tr>
+        <th>Account Token:</th>
+        <th colspan="3">{data.get('AccountToken', 'N/A')}</th>
+        </tr>
+        <tr>
+        <th>Nebula Machine ID:</th>
+        <th colspan="3">{data.get('NebulaMachineId', 'N/A')}</th>
+        </tr>
+        </table>
+        <hr>
+
+        <!-- General Information and Operating System Information -->
+        <div>
+        <table class="data_table">
+        <tr>
+        <th  colspan="2" class="table_category">General Information</th>
+        <th colspan="2" class="table_category">Operating System</th>
+        </tr>
+        <tr>
+        <th>Endpoint Name:</th>
+        <th>{agent_info.get('host_name', 'N/A')}</th>
+        <th>OS Version:</th>
+        <th>{agent_info.get('os_info', {}).get('os_version', 'N/A')}</th>
+        </tr>
+        <tr>
+        <th>FQDN</th>
+        <th>{agent_info.get('fully_qualified_host_name', 'N/A')}</th>
+        <th>OS Friendly Name:</th>
+        <th>{agent_info.get('os_info', {}).get('os_release_name', 'N/A')}</th>
+        </tr>
+        <tr>
+        <th>Last User:</th>
+        <th>{agent_info.get('last_user', 'N/A')}</th>
+        <th>OS Type:</th>
+        <th>{agent_info.get('os_info', {}).get('os_type', 'N/A')}</th>
+        </tr>
+        <tr>
+        <th>System Uptime</th>
+        <th>{system_uptime}</th>
+        <th>OS Architecture:</th>
+        <th>{agent_info.get('os_info', {}).get('os_architecture', 'N/A')}</th>
+        </tr>
+        </table>
+        <hr>
+        </div>
+        
+        <!-- Protection Status and Agent and Plugins Information -->
+        <div>
+        <table class="data_table">
+        <tr>
+        <th  colspan="2" class="table_category">Protection Status</th>
+        <th colspan="2" class="table_category">Agent and Plugins</th>
+        </tr>
+        <tr>
+        <th>Malware Protection:</th>
+        <th>{format_status(protection_statuses.get('rtp', 'N/A'))}</th>
+        <th>Endpoint Agent:</th>
+        <th>{trim_version(agent_info.get('engine_version', 'N/A'))}</th>
+        </tr>
+        <tr>
+        <th>Exploit Protection:</th>
+        <th>{format_status(protection_statuses.get('ae', 'N/A'))}</th>
+        <th>Endpoint Protection:</th>
+        <th>{plugin_versions['Endpoint Protection']}</th>
+        </tr>
+        <tr>
+        <th>Behavior Protection:</th>
+        <th>{format_status(protection_statuses.get('arw', 'N/A'))}</th>
+        <th>Active Response Shell:</th>
+        <th>{plugin_versions['Active Response Shell']}</th>
+        </tr>
+        <tr>
+        <th>Web Protection:</th>
+        <th>{format_status(protection_statuses.get('mwac', 'N/A'))}</th>
+        <th>Brute Force Protection:</th>
+        <th>{plugin_versions['Windows Remote Intrusion Detection and Prevention']}</th>
+        </tr>
+        <tr>
+        <th>Self Protection:</th>
+        <th>{format_status(protection_statuses.get('sp', 'N/A'))}</th>
+        <th>Asset Manager:</th>
+        <th>{plugin_versions['Asset Manager']}</th>
+        </tr>
+        <tr>
+        <th></th>
+        <th></th>
+        <th>Endpoint Detection and Response:</th>
+        <th>{plugin_versions['Endpoint Detection and Response']}</th>
+        </tr>
+        <tr>
+        <th></th>
+        <th></th>
+        <th>User Agent:</th>
+        <th>{", ".join([trim_version(v) for v in agent_info.get('tray_version', [])])}</th>
+        </tr>
+        <tr>
+        <th></th>
+        <th></th>
+        <th>Service Version:</th>
+        <th>{trim_version(agent_info.get('service_version', 'N/A'))}</th>
+        </tr>
+        </table>
+        </div>
+
+        <!-- Services and Processes Information-->
+        <div>
+        <table class="data_table">
+        <tr>
+        <th  colspan="2" class="table_category">Services</th>
+        <th colspan="2" class="table_category">Processes [WIP]</th>
+        </tr>
+        <tr>
+        <th>Malwarebytes Service:</th>
+        <th>{formatted_services.get('mbam_service', 'N/A')}</th>
+        <th>MBAMService.exe</th>
+        <th></th>
+        </tr>
+        <tr>
+        <th>Endpoint Agent:</th>
+        <th>{formatted_services.get('ea_service', 'N/A')}</th>
+        <th>MBCloudEA.exe</th>
+        <th></th>
+        </tr>
+        <tr>
+        <th>Endpoint Agent Monitor</th>
+        <th>{formatted_services.get('ea_monitor', 'N/A')}</th>
+        <th>EAServiceMonitor.exe</th>
+        <th></th>
+        </tr>
+        <tr>
+        <th></th>
+        <th></th>
+        <th>EATray.exe</th>
+        <th></th>
+        </tr>
+        <tr>
+        <th>VPN Service</th>
+        <th></th>
+        <th>MBVpnService.exe</th>
+        <th></th>
+        </tr>
+        <tr>
+        <th>VPN Tunnel Service</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        </tr>
+        
         </div>
         <hr>
-        <div class="left-column">
-            <h3>General Information</h3>
-            <div class="info-item">
-                <label>Endpoint Name:</label>
-                <span>{agent_info.get('host_name', 'N/A')}</span>
-            </div>
-            <div class="info-item">
-                <label>FQDN:</label>
-                <span>{agent_info.get('fully_qualified_host_name', 'N/A')}</span>
-            </div>
-            <div class="info-item">
-                <label>Last User:</label>
-                <span>{agent_info.get('last_user', 'N/A')}</span>
-            </div>
-            <h3>Operating System</h3>
-            <div class="info-item">
-                <label>OS Version:</label>
-                <span>{agent_info.get('os_info', {}).get('os_version', 'N/A')}</span>
-            </div>
-            <div class="info-item">
-                <label>OS Friendly Name:</label>
-                <span>{agent_info.get('os_info', {}).get('os_release_name', 'N/A')}</span>
-            </div>
-            <div class="info-item">
-                <label>OS Type:</label>
-                <span>{agent_info.get('os_info', {}).get('os_type', 'N/A')}</span>
-            </div>
-            <div class="info-item">
-                <label>OS Architecture:</label>
-                <span>{agent_info.get('os_info', {}).get('os_architecture', 'N/A')}</span>
-            </div>
-            <h3>Storage Information:</h3>
+
+        <!-- Storage Information -->
+        <div class="storage_info">
             {storage_info_html}
         </div>
-        <div class="right-column">
-            <h3>Protection Status</h3>
-            {protection_info_html}
-            <h3>Agent and Plugins</h3>
-            <div class="info-item">
-                <label>Endpoint Agent:</label>
-                <span>{agent_info.get('engine_version', 'N/A')}</span>
-            </div>
-            <div class="info-item">
-                <label>Endpoint Protection:</label>
-                <span>{plugin_versions['Endpoint Protection']}</span>
-            </div>
-            <div class="info-item">
-                <label>Active Response Shell:</label>
-                <span>{plugin_versions['Active Response Shell']}</span>
-            </div>
-            <div class="info-item">
-                <label>Brute Force Protection:</label>
-                <span>{plugin_versions['Windows Remote Intrusion Detection and Prevention']}</span>
-            </div>
-            <div class="info-item">
-                <label>Asset Manager:</label>
-                <span>{plugin_versions['Asset Manager']}</span>
-            </div>
-            <div class="info-item">
-                <label>Endpoint Detection and Response:</label>
-                <span>{plugin_versions['Endpoint Detection and Response']}</span>
-            </div>
-        </div>
-        <div class="full-width">
-            <hr>
-            <h3>Connection Test Results</h3>
+        <!-- Test Connection Results Information -->
+        <div class="connection_results">
             {connection_results_html}
         </div>
         <div class="full-width grey-background">
@@ -282,15 +457,20 @@ def generate_html_from_json(info_json_path, html_path):
     storage_info_html = get_drive_info(drives_info)
     
     plugins = data.get('AgentInfo', {}).get('plugins', [])
-    protection_info_html = get_protection_info(plugins)
     plugin_versions = get_plugin_versions(plugins)
     
     connection_data = load_json(os.path.join("temp", "json", "TestConnections.json"))
     connection_results_html = get_connection_results(connection_data)
     
-    html_content = generate_html_content(data, storage_info_html, protection_info_html, plugin_versions, connection_results_html)
+    system_info = load_json(os.path.join('temp', 'SystemInfo.json'))
+    system_uptime = format_system_uptime(system_info.get('SystemUptime', '0.00:00:00'))
+
+    services_info = get_services(load_json(os.path.join("temp", "json", "Services.json")))
+
+    html_content = generate_html_content(data, storage_info_html, plugin_versions, connection_results_html, system_uptime, services_info)
     
-    filename = f"{data.get('AgentInfo', {}).get('host_name', 'Analyzer_Results')}_Analyzer_Results.html"
+    host_name = data.get('AgentInfo', {}).get('host_name', 'Analyzer_Results')
+    filename = f"{host_name}_Analyzer_Results.html"
     html_path_with_name = os.path.join(html_dir, filename)
 
     try:
@@ -299,5 +479,8 @@ def generate_html_from_json(info_json_path, html_path):
     except Exception as e:
         print(f"Error writing '{html_path_with_name}': {e}")
 
+    return host_name, html_path_with_name
+
+
 if __name__ == "__main__":
-    generate_html_from_json(os.path.join("temp", "json", "Info.json"), os.path.join("results", "{host_name}_Analyzer_Results.html"))
+    generate_html_from_json(os.path.join("temp", "json", "Info.json"), os.path.join("results", "Analyzer_Results.html"))

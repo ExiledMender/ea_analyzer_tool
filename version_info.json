@@ -1,0 +1,57 @@
+[
+  {
+    "product_name": "Asset Manager",
+    "confluence_name": "Asset",
+    "plugin_version": "1.2.720"
+  },
+  {
+    "product_name": "Endpoint Protection",
+    "confluence_name": "MBAM",
+    "plugin_version": "1.2.1207"
+  },
+  {
+    "product_name": "Endpoint Detection and Response",
+    "confluence_name": "EDR",
+    "plugin_version": "1.2.400"
+  },
+  {
+    "product_name": "",
+    "confluence_name": "SIEM",
+    "plugin_version": "1.2.354"
+  },
+  {
+    "product_name": "Engine",
+    "confluence_name": "Engine",
+    "plugin_version": "1.2.1125"
+  },
+  {
+    "product_name": "Tray Version",
+    "confluence_name": "UserAgent",
+    "plugin_version": "1.2.488"
+  },
+  {
+    "product_name": "Service Version",
+    "confluence_name": "Service",
+    "plugin_version": "1.2.592"
+  },
+  {
+    "product_name": "Windows Remote Intrusion Detection and Prevention",
+    "confluence_name": "BFP",
+    "plugin_version": "1.2.338"
+  },
+  {
+    "product_name": "Monitoring Service",
+    "confluence_name": "EA Monitor Service",
+    "plugin_version": "1.0.71"
+  },
+  {
+    "product_name": "DNS Filter",
+    "confluence_name": "DNS Filter",
+    "plugin_version": "1.2.94"
+  },
+  {
+    "product_name": "DNS crpyt proxy",
+    "confluence_name": "DNS crpyt proxy",
+    "plugin_version": "2.1.65"
+  }
+]
