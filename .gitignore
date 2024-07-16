@@ -1,3 +1,4 @@
+results/*
 .logs/*
 temp/*
 .DS_store

@@ -1,17 +1,12 @@
 import json
 import os
-
 from datetime import datetime
 
 script_version = "v.0.5.6"
 
 def get_run_timestamp():
-    # Get the current date and time
     now = datetime.now()
-    
-    # Format the date and time as a string in the desired format
     timestamp = now.strftime("%I:%M %p, %d/%m/%Y")
-    
     return timestamp
 
 def bytes_to_gb(bytes_value):
@@ -37,7 +32,7 @@ def trim_version(version):
     parts = version.split('.')
     if len(parts) >= 4:
         return f"{parts[0]}.{parts[1]}.{parts[3]}"
-    return version  # Return original version if format is unexpected
+    return version
 
 def get_plugin_versions(plugins):
     plugin_version_map = {
@@ -70,15 +65,39 @@ def get_services(state):
         state_value = s.get('State', 'N/A')
         if caption in services_state_map:
             internal_name = services_state_map[caption]
-            # Only update if the current value is 'N/A'
             if service_info[internal_name] == 'N/A':
                 service_info[internal_name] = state_value
 
     return service_info
 
+def get_processes(state):
+    processes_state_map = {
+        'MBAMService': 'mbam_service',
+        'MBCloudEA': 'mb_cloud_ea',
+        'EAServiceMonitor': 'ea_service_monitor',
+        'EATray': 'ea_tray',
+        'MBVpnService': 'mb_vpn_service'
+    }
+
+    process_info = {
+        'mbam_service': 'N/A',
+        'mb_cloud_ea': 'N/A',
+        'ea_service_monitor': 'N/A',
+        'ea_tray': 'N/A',
+        'mb_vpn_service': 'N/A'
+    }
+
+    for s in state:
+        name = s.get('name', '')
+        process_value = s.get('responding', 'N/A')
+        if name in processes_state_map:
+            internal_name = processes_state_map[name]
+            process_info[internal_name] = process_value
+
+    return process_info
+
 def get_drive_info(drives):
     storage_info_html = '''
-    
     <table class="storage_info">
         <tr>
             <th>Drive Name</th>
@@ -140,9 +159,19 @@ def get_connection_results(connection_data):
     return connection_results_html
 
 def format_system_uptime(uptime):
-    parts = uptime.split('.')
-    days = parts[0]
-    time_str = parts[1]
+    if '.' in uptime and uptime.count('.') == 2:
+        days, time_str, _ = uptime.split('.')
+    elif '.' in uptime:
+        days_and_time, _ = uptime.split('.', 1)
+        if ':' in days_and_time:
+            days = "0"
+            time_str = days_and_time
+        else:
+            days, time_str = days_and_time.split('.', 1)
+    else:
+        days = "0"
+        time_str = uptime
+    
     hours, minutes, seconds = time_str.split(':')
     return f"{days}d {hours}h {minutes}min {int(float(seconds))}s"
 
@@ -160,7 +189,21 @@ def format_services(service_info):
         formatted_services[service] = format_status(status)
     return formatted_services
 
-def generate_html_content(data, storage_info_html, plugin_versions, connection_results_html, system_uptime, services_info):
+def format_process_status(responding):
+    if responding == True:
+        return f'<span style="color: green;">✔ Responding</span>'
+    elif responding == False:
+        return f'<span style="color: red;">✖ Not Responding</span>'
+    else:
+        return f'<span style="color: black;">— N/A</span>'
+
+def format_processes(runningprocesses_info):
+    formatted_processes = {}
+    for process, responding in runningprocesses_info.items():
+        formatted_processes[process] = format_process_status(responding)
+    return formatted_processes
+
+def generate_html_content(data, storage_info_html, plugin_versions, connection_results_html, system_uptime, services_info, formatted_processes):
     agent_info = data.get('AgentInfo', {})
 
     protection_statuses = {}
@@ -390,37 +433,37 @@ def generate_html_content(data, storage_info_html, plugin_versions, connection_r
         <table class="data_table">
         <tr>
         <th  colspan="2" class="table_category">Services</th>
-        <th colspan="2" class="table_category">Processes [WIP]</th>
+        <th colspan="2" class="table_category">Processes</th>
         </tr>
         <tr>
         <th>Malwarebytes Service:</th>
         <th>{formatted_services.get('mbam_service', 'N/A')}</th>
         <th>MBAMService.exe</th>
-        <th></th>
+        <th>{formatted_processes.get('mbam_service', 'N/A')}</th>
         </tr>
         <tr>
         <th>Endpoint Agent:</th>
         <th>{formatted_services.get('ea_service', 'N/A')}</th>
         <th>MBCloudEA.exe</th>
-        <th></th>
+        <th>{formatted_processes.get('mb_cloud_ea', 'N/A')}</th>
         </tr>
         <tr>
         <th>Endpoint Agent Monitor</th>
         <th>{formatted_services.get('ea_monitor', 'N/A')}</th>
         <th>EAServiceMonitor.exe</th>
-        <th></th>
+        <th>{formatted_processes.get('ea_service_monitor', 'N/A')}</th>
         </tr>
         <tr>
         <th></th>
         <th></th>
         <th>EATray.exe</th>
-        <th></th>
+        <th>{formatted_processes.get('ea_tray', 'N/A')}</th>
         </tr>
         <tr>
         <th>VPN Service</th>
         <th></th>
         <th>MBVpnService.exe</th>
-        <th></th>
+        <th>{formatted_processes.get('mb_vpn_service', 'N/A')}</th>
         </tr>
         <tr>
         <th>VPN Tunnel Service</th>
@@ -466,8 +509,11 @@ def generate_html_from_json(info_json_path, html_path):
     system_uptime = format_system_uptime(system_info.get('SystemUptime', '0.00:00:00'))
 
     services_info = get_services(load_json(os.path.join("temp", "json", "Services.json")))
+    
+    processes_info = get_processes(load_json(os.path.join("temp", "json", "RunningProcesses.json")))
+    formatted_processes = format_processes(processes_info)
 
-    html_content = generate_html_content(data, storage_info_html, plugin_versions, connection_results_html, system_uptime, services_info)
+    html_content = generate_html_content(data, storage_info_html, plugin_versions, connection_results_html, system_uptime, services_info, formatted_processes)
     
     host_name = data.get('AgentInfo', {}).get('host_name', 'Analyzer_Results')
     filename = f"{host_name}_Analyzer_Results.html"
@@ -480,7 +526,6 @@ def generate_html_from_json(info_json_path, html_path):
         print(f"Error writing '{html_path_with_name}': {e}")
 
     return host_name, html_path_with_name
-
 
 if __name__ == "__main__":
     generate_html_from_json(os.path.join("temp", "json", "Info.json"), os.path.join("results", "Analyzer_Results.html"))
