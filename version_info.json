@@ -53,5 +53,10 @@
     "product_name": "DNS crpyt proxy",
     "confluence_name": "DNS crpyt proxy",
     "plugin_version": "2.1.65"
+  },
+  {
+    "product_name": "Active Response Shell",
+    "confluence_name": "ActiveResponse",
+    "plugin_version": "1.2.49"
   }
 ]

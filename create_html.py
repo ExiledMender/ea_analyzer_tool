@@ -2,15 +2,12 @@ import json
 import os
 from datetime import datetime
 
-script_version = "v.0.6.1"
+script_version = "v.0.7.1"
 
 def get_run_timestamp():
     now = datetime.now()
     timestamp = now.strftime("%I:%M %p, %d/%m/%Y")
     return timestamp
-
-def bytes_to_gb(bytes_value):
-    return bytes_value / (1024 ** 3)
 
 def load_json(file_path):
     try:
@@ -100,6 +97,9 @@ def get_processes(state):
             process_info[internal_name] = process_value
 
     return process_info
+
+def bytes_to_gb(bytes_value):
+    return bytes_value / (1024 ** 3)
 
 def get_drive_info(drives):
     storage_info_html = '''
@@ -208,7 +208,41 @@ def format_processes(runningprocesses_info):
         formatted_processes[process] = format_process_status(responding)
     return formatted_processes
 
-def generate_html_content(data, storage_info_html, plugin_versions, connection_results_html, system_uptime, services_info, formatted_processes):
+def get_plugin_version_from_confluence_name(version_info_path, confluence_names):
+    version_data = load_json(version_info_path)
+    if not version_data:
+        return {}
+
+    version_info = {}
+    for item in version_data:
+        confluence_name = item.get('confluence_name', '')
+        if confluence_name in confluence_names:
+            version_info[confluence_name] = item.get('plugin_version', 'N/A')
+
+    return version_info
+
+def color_version(version, base_version):
+    try:
+        version_tuple = tuple(map(int, version.split('.')))
+        base_version_tuple = tuple(map(int, base_version.split('.')))
+    except ValueError:
+        return version
+
+    if version_tuple < base_version_tuple:
+        color = 'red'
+        style = 'bold'
+        # version += '!'
+    elif version_tuple == base_version_tuple:
+        color = 'green'
+        style = 'normal'
+    else:
+        color = 'DodgerBlue'
+        style = 'normal'
+    
+    return f'<span style="color: {color}; font-weight: {style};">{version}</span>'
+
+
+def generate_html_content(data, storage_info_html, plugin_versions, connection_results_html, system_uptime, services_info, formatted_processes, additional_versions):
     agent_info = data.get('AgentInfo', {})
 
     protection_statuses = {}
@@ -386,49 +420,49 @@ def generate_html_content(data, storage_info_html, plugin_versions, connection_r
         <th>Malware Protection:</th>
         <th>{format_status(protection_statuses.get('rtp', 'N/A'))}</th>
         <th>Endpoint Agent:</th>
-        <th>{trim_version(agent_info.get('engine_version', 'N/A'))}</th>
+        <th>{color_version(trim_version(agent_info.get('engine_version', 'N/A')), additional_versions.get('Engine', 'N/A'))}</th>
         </tr>
         <tr>
         <th>Exploit Protection:</th>
         <th>{format_status(protection_statuses.get('ae', 'N/A'))}</th>
         <th>Endpoint Protection:</th>
-        <th>{plugin_versions['Endpoint Protection']}</th>
+        <th>{color_version(plugin_versions['Endpoint Protection'], additional_versions.get('MBAM', 'N/A'))}</th>
         </tr>
         <tr>
         <th>Behavior Protection:</th>
         <th>{format_status(protection_statuses.get('arw', 'N/A'))}</th>
         <th>Active Response Shell:</th>
-        <th>{plugin_versions['Active Response Shell']}</th>
+        <th>{color_version(plugin_versions['Active Response Shell'], additional_versions.get('ActiveResponse', 'N/A'))}</th>
         </tr>
         <tr>
         <th>Web Protection:</th>
         <th>{format_status(protection_statuses.get('mwac', 'N/A'))}</th>
         <th>Brute Force Protection:</th>
-        <th>{plugin_versions['Windows Remote Intrusion Detection and Prevention']}</th>
+        <th>{color_version(plugin_versions['Windows Remote Intrusion Detection and Prevention'], additional_versions.get('BFP', 'N/A'))}</th>
         </tr>
         <tr>
         <th>Self Protection:</th>
         <th>{format_status(protection_statuses.get('sp', 'N/A'))}</th>
         <th>Asset Manager:</th>
-        <th>{plugin_versions['Asset Manager']}</th>
+        <th>{color_version(plugin_versions['Asset Manager'], additional_versions.get('Asset', 'N/A'))}</th>
         </tr>
         <tr>
         <th></th>
         <th></th>
         <th>Endpoint Detection and Response:</th>
-        <th>{plugin_versions['Endpoint Detection and Response']}</th>
+        <th>{color_version(plugin_versions['Endpoint Detection and Response'], additional_versions.get('EDR', 'N/A'))}</th>
         </tr>
         <tr>
         <th></th>
         <th></th>
         <th>User Agent:</th>
-        <th>{", ".join([trim_version(v) for v in agent_info.get('tray_version', [])])}</th>
+        <th>{", ".join([color_version(trim_version(v), additional_versions.get('UserAgent', 'N/A')) for v in agent_info.get('tray_version', [])])}</th>
         </tr>
         <tr>
         <th></th>
         <th></th>
         <th>Service Version:</th>
-        <th>{trim_version(agent_info.get('service_version', 'N/A'))}</th>
+        <th>{color_version(trim_version(agent_info.get('service_version', 'N/A')), additional_versions.get('Service', 'N/A'))}</th>
         </tr>
         </table>
         </div>
@@ -496,7 +530,7 @@ def generate_html_content(data, storage_info_html, plugin_versions, connection_r
     </html>
     """
 
-def generate_html_from_json(info_json_path, html_path):
+def generate_html_from_json(info_json_path, html_path, version_info_path):
     html_dir = create_html_directory(html_path)
     data = load_json(info_json_path)
     
@@ -518,11 +552,21 @@ def generate_html_from_json(info_json_path, html_path):
     processes_info = get_processes(load_json(os.path.join("temp", "json", "RunningProcesses.json")))
     formatted_processes = format_processes(processes_info)
 
-    html_content = generate_html_content(data, storage_info_html, plugin_versions, connection_results_html, system_uptime, services_info, formatted_processes)
-    
+    confluence_names = ['Asset', 'MBAM', 'EDR', 'SIEM', 'Engine', 'UserAgent', 'Service', 'BFP', 'EA Monitor Service', 'DNS Filter', 'DNS crpyt proxy', 'ActiveResponse']
+    additional_versions = get_plugin_version_from_confluence_name(version_info_path, confluence_names)
+
+    html_content = generate_html_content(data, storage_info_html, plugin_versions, connection_results_html, system_uptime, services_info, formatted_processes, additional_versions)
+
     host_name = data.get('AgentInfo', {}).get('host_name', 'Analyzer_Results')
     filename = f"{host_name}_Analyzer_Results.html"
     html_path_with_name = os.path.join(html_dir, filename)
+
+    if os.path.exists(html_path_with_name):
+        base, ext = os.path.splitext(html_path_with_name)
+        i = 1
+        while os.path.exists(f"{base} ({i}){ext}"):
+            i += 1
+        html_path_with_name = f"{base} ({i}){ext}"
 
     try:
         with open(html_path_with_name, 'w', encoding='utf-8') as file:
@@ -532,5 +576,6 @@ def generate_html_from_json(info_json_path, html_path):
 
     return host_name, html_path_with_name
 
+
 if __name__ == "__main__":
-    generate_html_from_json(os.path.join("temp", "json", "Info.json"), os.path.join("results", "Analyzer_Results.html"))
+    generate_html_from_json(os.path.join("temp", "json", "Info.json"), os.path.join("results", "Analyzer_Results.html"), os.path.join("temp", "json", "version_info.json"))

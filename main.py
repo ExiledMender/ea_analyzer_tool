@@ -40,6 +40,7 @@ def main():
     services_info_output = os.path.join(root_path, "temp", "json", "Services.json")
     runningprocesses_info_path = os.path.join(root_path, "temp", "RunningProcesses.json")
     runningprocesses_info_output = os.path.join(root_path, "temp", "json", "RunningProcesses.json")
+    version_info_path = os.path.join(root_path, "version_info.json")
 
     logs_dir = os.path.join(root_path, "temp")
     analyzer_dir = os.path.join(logs_dir, "json")
@@ -83,11 +84,16 @@ def main():
     else:
         print(f"RunningProcesses.json not found at {runningprocesses_info_path}")
 
+    if os.path.exists(version_info_path):
+        if debug:
+            print(f"Version info file found at {version_info_path}")
+    else:
+        print(f"Version info file not found at {version_info_path}")
+
     html_output_path = os.path.join("results", "Analyzer_Results.html")
-    host_name, html_path_with_name = generate_html_from_json(info_json_path, html_output_path)
+    host_name, html_path_with_name = generate_html_from_json(info_json_path, html_output_path, version_info_path)
     print(f"HTML report generated at {html_path_with_name} for host {host_name}")
 
-    # Open the directory where the HTML file was created
     open_directory(os.path.dirname(html_path_with_name))
 
     files_to_delete = [
