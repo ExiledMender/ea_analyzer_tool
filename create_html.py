@@ -2,7 +2,7 @@ import json
 import os
 from datetime import datetime
 
-script_version = "v.0.5.6"
+script_version = "v.0.6.1"
 
 def get_run_timestamp():
     now = datetime.now()
@@ -51,13 +51,18 @@ def get_services(state):
         'Malwarebytes Endpoint Agent Monitor': 'ea_monitor',
         'Malwarebytes Service': 'mbam_service',
         'Malwarebytes Endpoint Agent': 'ea_service',
-        'ThreatDown Endpoint Agent': 'ea_service'
+        'ThreatDown Endpoint Agent': 'ea_service',
+        'MBVpnService' : 'mb_vpn_service',
+        'MBVpnTunnelService' : 'mb_vpn_tunnel_service'
     }
 
     service_info = {
         'ea_monitor': 'N/A',
         'mbam_service': 'N/A',
-        'ea_service': 'N/A'
+        'ea_service': 'N/A',
+        'mb_vpn_service': 'N/A',
+        'mb_vpn_tunnel_service': 'N/A'
+
     }
 
     for s in state:
@@ -461,17 +466,17 @@ def generate_html_content(data, storage_info_html, plugin_versions, connection_r
         </tr>
         <tr>
         <th>VPN Service</th>
-        <th></th>
+        <th>{formatted_services.get('mb_vpn_service', 'N/A')}</th>
         <th>MBVpnService.exe</th>
         <th>{formatted_processes.get('mb_vpn_service', 'N/A')}</th>
         </tr>
         <tr>
         <th>VPN Tunnel Service</th>
-        <th></th>
+        <th>{formatted_services.get('mb_vpn_tunnel_service', 'N/A')}</th>
         <th></th>
         <th></th>
         </tr>
-        
+
         </div>
         <hr>
 

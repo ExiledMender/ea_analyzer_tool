@@ -22,14 +22,14 @@ def convert_test_connection_to_json(test_connection_path, test_connection_output
                         "Result": data["Result"],
                         "Headers": data["Headers"]
                     }
-                    test_values[data["UriTested"]] = formatted_output  # Use UriTested as the key
+                    test_values[data["UriTested"]] = formatted_output
             except json.JSONDecodeError as e:
                 print(f"Error reading file {test_connection_path}: {e}")
 
         with open(test_connection_output, 'w') as outfile:
             json.dump(test_values, outfile, indent=4)
         
-        return test_values  # Return the dictionary of formatted outputs
+        return test_values
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
