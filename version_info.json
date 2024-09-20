@@ -7,7 +7,7 @@
   {
     "product_name": "Endpoint Protection",
     "confluence_name": "MBAM",
-    "plugin_version": "1.2.1207"
+    "plugin_version": "1.2.1208"
   },
   {
     "product_name": "Endpoint Detection and Response",
@@ -22,7 +22,7 @@
   {
     "product_name": "Engine",
     "confluence_name": "Engine",
-    "plugin_version": "1.2.1125"
+    "plugin_version": "1.2.1133"
   },
   {
     "product_name": "Tray Version",
@@ -32,7 +32,7 @@
   {
     "product_name": "Service Version",
     "confluence_name": "Service",
-    "plugin_version": "1.2.592"
+    "plugin_version": "1.2.597"
   },
   {
     "product_name": "Windows Remote Intrusion Detection and Prevention",
